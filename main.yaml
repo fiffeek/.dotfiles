@@ -8,6 +8,10 @@
       tags:
         - i3
         - polybar
+    - role: rofi
+      tags:
+        - i3
+        - rofi
     - role: i3
       tags:
         - i3

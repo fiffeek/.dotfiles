@@ -1,0 +1,13 @@
+---
+- name: rofi | Create config dir
+  ansible.builtin.file:
+    path: "{{ rofi_config_dest }}"
+    state: directory
+    mode: '0755'
+
+- name: rofi | Link config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files"
+    dest: "{{ polybar_config_dest }}"
+    state: link
+    force: yes

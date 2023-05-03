@@ -4,6 +4,8 @@ apt_packages:
   - cmake
   - htop
   - polybar
+  - rofi
 
 i3_config_dest: "~/.config/i3/"
 polybar_config_dest: "~/.config/polybar"
+rofi_config_dest: "~/.config/polybar"
