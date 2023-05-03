@@ -15,8 +15,8 @@
   become: true
 
 - name: i3 | Install
-  ansible.builtin.apt: 
-    update_cache: yes
+  ansible.builtin.apt:
+    update_cache: true
     pkg: i3
     state: latest
   become: true

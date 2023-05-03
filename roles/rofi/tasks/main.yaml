@@ -10,4 +10,4 @@
     src: "{{ role_path }}/files"
     dest: "{{ polybar_config_dest }}"
     state: link
-    force: yes
+    force: true

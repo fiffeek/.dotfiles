@@ -10,4 +10,4 @@
     src: "{{ role_path }}/files/config"
     dest: "{{ (i3_config_dest, 'config') | path_join }}"
     state: link
-    force: yes
+    force: true
