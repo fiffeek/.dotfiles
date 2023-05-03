@@ -4,6 +4,10 @@
     - role: apt
       tags:
         - apt
+    - role: polybar
+      tags:
+        - i3
+        - polybar
     - role: i3
       tags:
         - i3
