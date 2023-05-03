@@ -6,7 +6,12 @@ apt_packages:
   - htop
   - polybar
   - rofi
+  - git
+  - zsh
+  - curl
 
 i3_config_dest: "~/.config/i3/"
 polybar_config_dest: "~/.config/polybar"
-rofi_config_dest: "~/.config/polybar"
+rofi_config_dest: "~/.config/rofi"
+config_files_dest: "~/"
+omz_custom_plugins_dest: "custom/plugins"

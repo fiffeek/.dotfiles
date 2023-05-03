@@ -16,3 +16,6 @@
     - role: i3
       tags:
         - i3
+    - role: zsh
+      tags:
+        - zsh
