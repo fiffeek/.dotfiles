@@ -4,3 +4,6 @@
     - role: apt
       tags:
         - apt
+    - role: i3
+      tags:
+        - i3

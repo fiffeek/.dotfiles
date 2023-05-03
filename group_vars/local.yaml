@@ -5,3 +5,4 @@ apt_packages:
   - htop
   - i3
 
+i3_config_dest: "~/.config/i3/"
