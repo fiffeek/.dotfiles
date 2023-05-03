@@ -1,0 +1,7 @@
+apt_packages:
+  - ansible
+  - ansible-lint
+  - cmake
+  - htop
+  - i3
+
