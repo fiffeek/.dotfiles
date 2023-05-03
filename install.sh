@@ -6,7 +6,7 @@ ROOTDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 HOSTS="$ROOTDIR/hosts"
 PLAYBOOK="$ROOTDIR/main.yaml"
 
-apt-get update && apt-get install -y ansible
+apt-get -qq update && apt-get install -y -qq ansible
 
 ansible-playbook -i "$HOSTS" "$PLAYBOOK" --ask-become-pass
 
