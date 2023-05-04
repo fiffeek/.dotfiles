@@ -22,3 +22,6 @@
     - role: asdf
       tags:
         - asdf
+    - role: rust
+      tags:
+        - rust

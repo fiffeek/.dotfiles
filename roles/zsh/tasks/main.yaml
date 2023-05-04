@@ -7,7 +7,7 @@
 - name: zsh | Install oh-my-zsh
   ansible.builtin.shell:
     cmd: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-  when: omz_installed.stat.exists == false
+  when: not omz_installed.stat.exists
 
 - name: zsh | Clone zsh-autocomplete
   ansible.builtin.git:
