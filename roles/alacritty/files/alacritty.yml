@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/themes/themes/campbell.yaml
+  - ~/.config/alacritty/themes/themes/tomorrow_night_bright.yaml
 
 selection:
   save_to_clipboard: true

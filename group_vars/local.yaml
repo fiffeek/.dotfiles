@@ -29,6 +29,7 @@ apt_packages:
   - liblzma-dev
   - picom
   - hsetroot
+  - xclip
 
 dotfiles:
   home: "~/"
@@ -39,3 +40,4 @@ dotfiles:
   alacritty: "~/.config/alacritty"
   oh_my_zsh:
     plugins_dest: "custom/plugins"
+    themes_dest: "themes"
