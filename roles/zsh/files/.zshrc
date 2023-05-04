@@ -65,7 +65,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf zsh-syntax-highlighting zsh-autocomplete fzf-zsh-plugin)
+plugins=(git asdf zsh-syntax-highlighting zsh-autocomplete fzf-zsh-plugin z)
 
 source $ZSH/oh-my-zsh.sh
 
