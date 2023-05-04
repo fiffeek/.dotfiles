@@ -187,9 +187,12 @@ client.focused #343746 #343746 #F8F8F2 #343746 #343746
 client.focused_inactive #343746 #343746 #F8F8F2 #21222C #21222C
 client.unfocused #343746 #343746 #F8F8F2 #21222C #21222C
 
-
 # Gaps
 
 gaps inner 8
 gaps outer 0
 smart_gaps on
+
+# Focus
+
+focus_follows_mouse no
