@@ -27,12 +27,15 @@ apt_packages:
   - libxmlsec1-dev
   - libffi-dev
   - liblzma-dev
+  - picom
+  - hsetroot
 
 dotfiles:
   home: "~/"
   i3: "~/.config/i3/"
   polybar: "~/.config/polybar"
   rofi: "~/.config/rofi"
+  picom: "~/.config/picom"
   alacritty: "~/.config/alacritty"
   oh_my_zsh:
     plugins_dest: "custom/plugins"

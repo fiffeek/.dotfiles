@@ -24,6 +24,11 @@
     dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/"
   when: jbm_exists.stdout == ""
 
+- name: fonts | Install FontAwesome
+  ansible.builtin.apt:
+    name: "fonts-font-awesome"
+  become: true
+
 - name: fonts | Refresh cache
   shell: fc-cache -fv
   ignore_errors: true

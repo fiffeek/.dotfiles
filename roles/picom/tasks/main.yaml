@@ -1,0 +1,13 @@
+---
+- name: picom | Create config dir
+  ansible.builtin.file:
+    path: "{{ dotfiles.picom }}"
+    state: directory
+    mode: "0755"
+
+- name: picom | Link config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files"
+    dest: "{{ dotfiles.picom }}"
+    state: link
+    force: true

@@ -29,3 +29,6 @@
     - role: i3
       tags:
         - i3
+    - role: picom
+      tags:
+        - picom
