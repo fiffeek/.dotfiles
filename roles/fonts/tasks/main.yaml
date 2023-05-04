@@ -1,0 +1,29 @@
+---
+- name: fonts | Ensure fonts directory exists
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.fonts"
+    state: directory
+
+- name: fonts | Check JetBrainsMono existence
+  shell:
+    cmd: fc-list | grep JetBrainsMono
+  register: jbm_exists
+  ignore_errors: true
+  changed_when: false
+
+- name: fonts | Download JetBrainsMono
+  ansible.builtin.unarchive:
+    src: https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip
+    dest: "{{ lookup('env', 'HOME') }}/.fonts"
+    remote_src: true
+  when: jbm_exists.stdout == ""
+
+- name: fonts | Copy fonts for the user
+  copy:
+    src: "{{ lookup('env', 'HOME') }}/.fonts"
+    dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/"
+  when: jbm_exists.stdout == ""
+
+- name: fonts | Refresh cache
+  shell: fc-cache -fv
+  ignore_errors: true

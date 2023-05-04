@@ -5,6 +5,9 @@
     - role: apt
       tags:
         - apt
+    - role: fonts
+      tags:
+        - fonts
     - role: polybar
       tags:
         - polybar
