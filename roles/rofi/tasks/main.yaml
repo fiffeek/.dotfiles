@@ -1,13 +1,13 @@
 ---
 - name: rofi | Create config dir
   ansible.builtin.file:
-    path: "{{ rofi_config_dest }}"
+    path: "{{ dotfiles.rofi }}"
     state: directory
     mode: "0755"
 
 - name: rofi | Link config
   ansible.builtin.file:
     src: "{{ role_path }}/files"
-    dest: "{{ rofi_config_dest }}"
+    dest: "{{ dotfiles.rofi }}"
     state: link
     force: true

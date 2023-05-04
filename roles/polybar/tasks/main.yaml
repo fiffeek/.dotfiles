@@ -1,13 +1,13 @@
 ---
 - name: polybar | Create config dir
   ansible.builtin.file:
-    path: "{{ polybar_config_dest }}"
+    path: "{{ dotfiles.polybar }}"
     state: directory
-    mode: '0755'
+    mode: "0755"
 
 - name: polybar | Link config
   ansible.builtin.file:
     src: "{{ role_path }}/files"
-    dest: "{{ polybar_config_dest }}"
+    dest: "{{ dotfiles.polybar }}"
     state: link
     force: true

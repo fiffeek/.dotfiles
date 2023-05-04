@@ -1,0 +1,33 @@
+---
+- name: asdf | Installs asdf
+  git:
+    repo: "https://github.com/asdf-vm/asdf.git"
+    dest: "{{ dotfiles.home }}/.asdf"
+    update: false
+    force: true
+    version: v0.11.3
+
+- name: asdf | Install plugins
+  ansible.builtin.shell: "asdf plugin-add {{ item.name }}"
+  args:
+    creates: ".asdf/plugins/{{ item.name }}"
+    chdir: "{{ ansible_user_dir }}"
+    executable: /bin/zsh
+  loop:
+    - { name: "python" }
+
+- name: asdf | Install tools
+  ansible.builtin.shell: "asdf install {{ item.name }} {{ item.version }}"
+  args:
+    chdir: "{{ ansible_user_dir }}"
+    executable: /bin/zsh
+  loop:
+    - { name: "python", version: "3.11.2" }
+
+- name: asdf | Set up globals
+  ansible.builtin.shell: "asdf global {{ item.name }} {{ item.version }}"
+  args:
+    chdir: "{{ ansible_user_dir }}"
+    executable: /bin/zsh
+  loop:
+    - { name: "python", version: "3.11.2" }

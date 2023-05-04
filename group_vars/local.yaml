@@ -9,9 +9,29 @@ apt_packages:
   - git
   - zsh
   - curl
+  - pkg-config
+  - libfreetype6-dev
+  - libfontconfig1-dev
+  - libxcb-xfixes0-dev
+  - libxkbcommon-dev
+  - build-essential
+  - libssl-dev
+  - zlib1g-dev
+  - libbz2-dev
+  - libreadline-dev
+  - libsqlite3-dev
+  - libncursesw5-dev
+  - xz-utils
+  - tk-dev
+  - libxml2-dev
+  - libxmlsec1-dev
+  - libffi-dev
+  - liblzma-dev
 
-i3_config_dest: "~/.config/i3/"
-polybar_config_dest: "~/.config/polybar"
-rofi_config_dest: "~/.config/rofi"
-config_files_dest: "~/"
-omz_custom_plugins_dest: "custom/plugins"
+dotfiles:
+  home: "~/"
+  i3: "~/.config/i3/"
+  polybar: "~/.config/polybar"
+  rofi: "~/.config/rofi"
+  oh_my_zsh:
+    plugins_dest: "custom/plugins"

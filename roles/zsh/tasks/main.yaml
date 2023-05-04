@@ -1,7 +1,7 @@
 ---
 - name: zsh | Check if omz already installed
   stat:
-    path: "{{ (config_files_dest, '.oh-my-zsh') | path_join }}"
+    path: "{{ (dotfiles.home, '.oh-my-zsh') | path_join }}"
   register: omz_installed
 
 - name: zsh | Install oh-my-zsh
@@ -12,21 +12,21 @@
 - name: zsh | Clone zsh-autocomplete
   ansible.builtin.git:
     repo: "https://github.com/marlonrichert/zsh-autocomplete.git"
-    dest: "{{ (config_files_dest, '.oh-my-zsh', omz_custom_plugins_dest, 'zsh-autocomplete') | path_join }}"
+    dest: "{{ (dotfiles.home, '.oh-my-zsh', dotfiles.oh_my_zsh.plugins_dest, 'zsh-autocomplete') | path_join }}"
     version: "main"
     update: false
 
 - name: zsh | Clone zsh-syntax-highlighting
   ansible.builtin.git:
     repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
-    dest: "{{ (config_files_dest, '.oh-my-zsh', omz_custom_plugins_dest, 'zsh-syntax-highlighting') | path_join }}"
+    dest: "{{ (dotfiles.home, '.oh-my-zsh', dotfiles.oh_my_zsh.plugins_dest, 'zsh-syntax-highlighting') | path_join }}"
     version: "master"
     update: false
 
 - name: zsh | Link config
   ansible.builtin.file:
     src: "{{ role_path }}/files/.zshrc"
-    dest: "{{ (config_files_dest, '.zshrc') | path_join }}"
+    dest: "{{ (dotfiles.home, '.zshrc') | path_join }}"
     state: link
     force: true
 

@@ -1,13 +1,13 @@
 ---
 - name: i3 | Create the i3 config directory
   ansible.builtin.file:
-    path: "{{ i3_config_dest }}"
+    path: "{{ dotfiles.i3 }}"
     state: directory
-    mode: '0755'
+    mode: "0755"
 
 - name: i3 | Link i3 config
   ansible.builtin.file:
     src: "{{ role_path }}/files/config"
-    dest: "{{ (i3_config_dest, 'config') | path_join }}"
+    dest: "{{ (dotfiles.i3, 'config') | path_join }}"
     state: link
     force: true
