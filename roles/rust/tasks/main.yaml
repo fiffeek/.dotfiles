@@ -1,6 +1,8 @@
 ---
 - name: rust | Check if cargo installed
   shell: command -v cargo
+  args:
+    executable: /bin/zsh
   register: cargo_exists
   ignore_errors: true
 
@@ -10,7 +12,7 @@
     url: https://sh.rustup.rs
     dest: /tmp/sh.rustup.rs
     mode: "0755"
-    force: "yes"
+    force: yes
 
 - name: rust | Install
   when: cargo_exists is failed

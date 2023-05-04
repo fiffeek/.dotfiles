@@ -33,5 +33,6 @@ dotfiles:
   i3: "~/.config/i3/"
   polybar: "~/.config/polybar"
   rofi: "~/.config/rofi"
+  alacritty: "~/.config/alacritty"
   oh_my_zsh:
     plugins_dest: "custom/plugins"
