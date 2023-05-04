@@ -23,6 +23,13 @@
     version: "master"
     update: false
 
+- name: zsh | Clone zsh-fzf
+  ansible.builtin.git:
+    repo: "https://github.com/unixorn/fzf-zsh-plugin.git"
+    dest: "{{ (dotfiles.home, '.oh-my-zsh', dotfiles.oh_my_zsh.plugins_dest, 'fzf-zsh-plugin') | path_join }}"
+    version: "main"
+    update: false
+
 - name: zsh | Link config
   ansible.builtin.file:
     src: "{{ role_path }}/files/.zshrc"
