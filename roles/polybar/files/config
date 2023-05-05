@@ -8,7 +8,7 @@ accent = #FFFFFF
 
 [bar/top]
 width = 100%
-height = 24pt
+height = 20pt
 radius = 0
 offset-x = 0
 offset-y = 0
@@ -17,23 +17,21 @@ foreground = ${colors.foreground}
 
 line-size = 3pt
 
-border-size = 4pt
-border-color = #00000000
-
+border-size = 0
 padding-left = 0
 padding-right = 0
+module-margin = 1pt
 
-module-margin = 0
+separator = 
 
-separator = |
-separator-foreground = ${colors.disabled}
+font-0 = "JetBrains Mono:size=10;3"
+font-1 = "Symbols Nerd Font Mono:style=Regular:size=6;3"
 
-font-0 = "JetBrains Mono:size=8"
-font-1 = "JetBrains Mono:size=8"
 
 modules-left = i3
-modules-center =
-modules-right = memory
+modules-center = title
+modules-right = cpu memory disk
+
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -86,7 +84,56 @@ label-urgent-foreground = ${colors.foreground}
 type = internal/memory
 interval = 5
 warn-percentage = 95
-label = %percentage_used%
-format-prefix = "﬙ "
+label = %gb_free%
+format-prefix = " "
 format-prefix-foreground = ${colors.accent}
-format-prefix-font = 2
+format-prefix-font = 1
+
+[module/title]
+type = internal/xwindow
+
+
+[module/disk]
+type = internal/fs
+
+; Mountpoints to display
+mount-0 = /
+
+; Seconds to sleep between updates
+; Default: 30
+interval = 60
+
+; Display fixed precision values
+; Default: false
+fixed-values = true
+
+; Spacing (number of spaces, pixels, points) between entries
+; Default: 2
+spacing = 4
+
+; Default: 90
+; New in version 3.6.0
+warn-percentage = 90
+
+format-mounted-prefix = "󰆼 "
+format-mounted-prefix-foreground = ${colors.accent}
+format-mounted-prefix-font = 1
+label-mounted = %mountpoint%: %free%
+
+
+[module/cpu]
+type = internal/cpu
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 5
+
+; Default: 80
+; New in version 3.6.0
+warn-percentage = 95
+
+label = %percentage:02%%
+
+format-prefix = " "
+format-prefix-foreground = ${colors.accent}
+format-prefix-font = 1
