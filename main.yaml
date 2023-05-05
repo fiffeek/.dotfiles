@@ -32,3 +32,6 @@
     - role: picom
       tags:
         - picom
+    - role: tmux
+      tags:
+        - tmux

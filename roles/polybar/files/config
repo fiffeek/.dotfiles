@@ -1,10 +1,10 @@
 [colors]
-background = #000000
+background = #1a1b26
 background-alt = #373B41
-foreground = #C5C8C6
+foreground = #c0caf5
 primary = #FFFFFF
 disabled = #707880
-accent = #FFFFFF
+accent = #c0caf5
 
 [bar/top]
 width = 100%
@@ -25,7 +25,7 @@ module-margin = 1pt
 separator = 
 
 font-0 = "JetBrains Mono:size=10;3"
-font-1 = "Symbols Nerd Font Mono:style=Regular:size=6;3"
+font-1 = "Symbols Nerd Font Mono:style=Regular:size=9;2"
 
 
 modules-left = i3

@@ -72,7 +72,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf zsh-syntax-highlighting zsh-autocomplete fzf-zsh-plugin z)
+plugins=(git asdf tmux zsh-syntax-highlighting zsh-autocomplete fzf-zsh-plugin z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,3 +104,10 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Autocompletions
+bindkey '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+
+# Tmux
+export TERM=xterm-256color
+export EDITOR='nvim'

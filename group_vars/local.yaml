@@ -30,6 +30,9 @@ apt_packages:
   - picom
   - hsetroot
   - xclip
+  - tmux
+  - neovim
+  - tmuxp
 
 dotfiles:
   home: "~/"

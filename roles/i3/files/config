@@ -28,7 +28,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Picom
-exec --no-startup-id hsetroot -solid '#000000'
+exec --no-startup-id hsetroot -solid '#414868'
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # start up polybar
@@ -181,15 +181,40 @@ bar {
         tray_output none
 }
 
-# Borders settings
+# Borders
+# Also removes all title bars
+for_window [class="^.*"] border pixel 3
+default_border pixel 3
+default_floating_border pixel 3
 
-# border width
-default_border pixel 2
+# Hide borders at the edge of the screen
+hide_edge_borders smart
 
-# border colors
-client.focused #343746 #343746 #F8F8F2 #343746 #343746
-client.focused_inactive #343746 #343746 #F8F8F2 #21222C #21222C
-client.unfocused #343746 #343746 #F8F8F2 #21222C #21222C
+# Set colours various window states
+# Syntax: client.<class> <border> <background> <text> [<indicator> [<child_border>]]
+# The available classes are:
+        # client.focused: The window that has focus.
+        # client.focused_inactive: The most recently focused view within a container which is not focused.
+        # client.placeholder: Ignored (present for i3 compatibility).
+        # client.unfocused: A view that does not have focus.
+        # client.urgent: A view with an urgency hint. Note: Native Wayland windows do not support urgency. Urgency only works for Xwayland windows.
+#The meaning of each color is:
+        # border: The border around the title bar.
+        # background: The background of the title bar.
+        # text: The text color of the title bar.
+        # indicator: The color used to indicate where a new view will open. In a tiled container, this would paint the right border of the current view if a new view would be opened to the right.
+        # child_border: The border around the view itself.
+# The default colors are:
+        # class	        border	background	text    indicator	child_border			
+        # background	n/a	    #ffffff     n/a	    n/a	        n/a
+        # focused	    #4c7899	#285577	    #ffffff	#2e9ef4	    #285577
+        # focused_inactive	#333333	#5f676a	#ffffff	#484e50	    #5f676a
+        # unfocused	    #333333	#222222	    #888888	#292d2e	    #222222
+        # urgent	    #2f343a	#900000	    #ffffff	#900000	    #900000
+        # placeholder	#000000	#0c0c0c	    #ffffff	#000000 	#0c0c0c
+client.focused           #9aa5ce #364A82 #c0caf5 #9aa5ce   #9aa5ce
+client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
+client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
 
 # Gaps
 
