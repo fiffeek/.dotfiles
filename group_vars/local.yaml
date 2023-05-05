@@ -33,6 +33,7 @@ apt_packages:
   - tmux
   - neovim
   - tmuxp
+  - feh
 
 dotfiles:
   home: "~/"

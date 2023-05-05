@@ -28,7 +28,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Picom
-exec --no-startup-id hsetroot -solid '#414868'
+exec --no-startup-id hsetroot -solid '#000000'
+exec --no-startup-id feh --bg-tile ~/.config/i3/tile.png
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # start up polybar

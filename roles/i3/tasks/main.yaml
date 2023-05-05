@@ -5,6 +5,13 @@
     state: directory
     mode: "0755"
 
+- name: i3 | Link wallpaper
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/tile.png"
+    dest: "{{ (dotfiles.i3, 'tile.png') | path_join }}"
+    state: link
+    force: true
+
 - name: i3 | Link i3 config
   ansible.builtin.file:
     src: "{{ role_path }}/files/config"
