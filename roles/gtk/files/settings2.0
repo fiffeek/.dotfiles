@@ -1,0 +1,9 @@
+gtk-icon-theme-name = "TokyoNight"
+gtk-theme-name = "Papirus-Dark"
+
+style "user-font"
+{
+        font_name="JetBrains Mono 10"
+}
+widget_class "*" style "user-font"
+gtk-font-name = "JetBrains Mono 10"

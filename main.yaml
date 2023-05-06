@@ -8,6 +8,9 @@
     - role: fonts
       tags:
         - fonts
+    - role: gtk
+      tags:
+        - gtk
     - role: polybar
       tags:
         - polybar

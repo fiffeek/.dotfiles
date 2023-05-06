@@ -45,6 +45,11 @@ dotfiles:
   rofi: "~/.config/rofi"
   picom: "~/.config/picom"
   alacritty: "~/.config/alacritty"
+  gtk:
+    versions:
+      three: "~/.config/gtk-3.0"
+      two: "~/.gtkrc-2.0"
+    themes: "~/.local/share/themes"
   oh_my_zsh:
     plugins_dest: "custom/plugins"
     themes_dest: "themes"

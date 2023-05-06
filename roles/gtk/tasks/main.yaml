@@ -1,0 +1,39 @@
+---
+- name: gtk | Create config dir
+  ansible.builtin.file:
+    path: "{{ dotfiles.gtk.versions.three }}"
+    state: directory
+    mode: "0755"
+
+- name: gtk | Clone Tokyo Night Theme
+  ansible.builtin.git:
+    repo: "https://github.com/stronk-dev/Tokyo-Night-Linux.git"
+    dest: "/tmp/gtk-tokyo-night-theme"
+    version: "master"
+    update: false
+
+- name: gtk | Create theme dir
+  ansible.builtin.file:
+    path: "{{ dotfiles.gtk.themes }}/TokyoNight"
+    state: directory
+    mode: "0755"
+
+- name: gtk | Synchronize Tokyo Night Theme
+  synchronize:
+    src: "/tmp/gtk-tokyo-night-theme/usr/share/themes/TokyoNight"
+    dest: "{{ dotfiles.gtk.themes }}"
+  become: true
+
+- name: gtk | Link config for 3.0
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/settings3.0.ini"
+    dest: "{{ dotfiles.gtk.versions.three }}/settings.ini"
+    state: link
+    force: true
+
+- name: gtk | Link config for 2.0
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/settings2.0"
+    dest: "{{ dotfiles.gtk.versions.two }}"
+    state: link
+    force: true
