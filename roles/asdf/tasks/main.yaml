@@ -8,26 +8,23 @@
     version: v0.11.3
 
 - name: asdf | Install plugins
-  ansible.builtin.shell: "asdf plugin-add {{ item.name }}"
+  ansible.builtin.shell: "asdf plugin-add {{ item.name }} {{ item.repository }}"
   args:
     creates: ".asdf/plugins/{{ item.name }}"
     chdir: "{{ ansible_user_dir }}"
     executable: /bin/zsh
-  loop:
-    - { name: "python" }
+  loop: "{{ asdf.plugins }}"
 
 - name: asdf | Install tools
   ansible.builtin.shell: "asdf install {{ item.name }} {{ item.version }}"
   args:
     chdir: "{{ ansible_user_dir }}"
     executable: /bin/zsh
-  loop:
-    - { name: "python", version: "3.11.2" }
+  loop: "{{ asdf.installs }}"
 
 - name: asdf | Set up globals
   ansible.builtin.shell: "asdf global {{ item.name }} {{ item.version }}"
   args:
     chdir: "{{ ansible_user_dir }}"
     executable: /bin/zsh
-  loop:
-    - { name: "python", version: "3.11.2" }
+  loop: "{{ asdf.globals }}"
