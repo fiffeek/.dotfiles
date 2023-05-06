@@ -52,7 +52,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # rofi:
-bindsym $mod+space exec --no-startup-id rofi -show drun
+bindsym $mod+space exec --no-startup-id rofi -show drun -theme ~/.config/rofi/standard.rasi
+bindsym $mod+Shift+p exec --no-startup-id ~/.config/rofi/powermenu.sh
 
 # change focus
 bindsym $mod+h focus left
