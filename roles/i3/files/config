@@ -79,7 +79,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+z split z
+bindsym $mod+z split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -226,3 +226,7 @@ smart_gaps on
 # Focus
 
 focus_follows_mouse no
+
+# GNOME settings binds
+bindsym $mod+b exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center bluetooth
+bindsym $mod+c exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center

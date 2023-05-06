@@ -4,6 +4,14 @@ import:
 selection:
   save_to_clipboard: true
 
+# Start tmux automatically for each new terminal
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux"
+
 # Font configuration (changes require restart)
 font:
   # Normal (roman) font face
