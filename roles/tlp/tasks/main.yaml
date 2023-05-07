@@ -1,0 +1,16 @@
+---
+- name: tlp | Link config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/tlp.conf"
+    dest: "{{ dotfiles.tlp }}/tlp.conf"
+    state: link
+    force: true
+  become: true
+  when: localhost.is_laptop | bool
+
+- name: tlp | Start and enable software
+  ansible.builtin.service:
+    name: "tlp"
+    state: started
+    enabled: yes
+  become: true

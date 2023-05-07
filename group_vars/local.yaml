@@ -37,6 +37,8 @@ apt_packages:
   - jq
   - unzip
   - coreutils
+  - tlp
+  - tlp-rdw
 
 dotfiles:
   home: "~/"
@@ -44,6 +46,7 @@ dotfiles:
   polybar: "~/.config/polybar"
   rofi: "~/.config/rofi"
   picom: "~/.config/picom"
+  tlp: "/etc/"
   alacritty: "~/.config/alacritty"
   gtk:
     versions:
@@ -128,3 +131,6 @@ asdf:
       version: "latest"
     - name: "awscli"
       version: "latest:2"
+
+localhost:
+  is_laptop: true
