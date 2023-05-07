@@ -67,3 +67,7 @@ cursor:
     #   - On: Enable blinking by default
     #   - Always: Force the cursor to always blink
     blinking: Never
+
+# https://news.ycombinator.com/item?id=27075659
+env:
+  TERM: xterm-256color
