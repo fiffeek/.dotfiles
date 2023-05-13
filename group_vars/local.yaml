@@ -31,7 +31,6 @@ apt_packages:
   - hsetroot
   - xclip
   - tmux
-  - neovim
   - tmuxp
   - feh
   - jq
@@ -105,6 +104,8 @@ asdf:
       repository: "https://github.com/MetricMike/asdf-awscli.git"
     - name: "bat"
       repository: ""
+    - name: "neovim"
+      repository: "https://github.com/richin13/asdf-neovim"
   installs:
     - name: "python"
       version: "3.11.2"
@@ -120,6 +121,8 @@ asdf:
       version: "latest"
     - name: "awscli"
       version: "latest:2"
+    - name: "neovim"
+      version: "nightly"
   globals:
     - name: "python"
       version: "3.9.0"
@@ -133,6 +136,8 @@ asdf:
       version: "latest"
     - name: "awscli"
       version: "latest:2"
+    - name: "neovim"
+      version: "nightly"
 
 localhost:
   is_laptop: true
