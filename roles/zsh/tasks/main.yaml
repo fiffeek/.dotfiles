@@ -52,6 +52,8 @@
     force: true
 
 - name: zsh | Change default shell to /bin/zsh
-  ansible.builtin.command: "chsh -s /bin/zsh {{ ansible_user_id }}"
   become: true
-  when: ansible_user_shell != '/bin/zsh'
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh
+    

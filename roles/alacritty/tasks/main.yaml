@@ -1,6 +1,6 @@
 ---
 - name: alacritty | Check if alacritty installed
-  shell: command -v cargo
+  shell: command -v alacritty
   args:
     executable: /bin/zsh
   register: alacritty_exists

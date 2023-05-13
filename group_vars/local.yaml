@@ -39,6 +39,8 @@ apt_packages:
   - coreutils
   - tlp
   - tlp-rdw
+  - xapt
+  - xserver-xorg-input-libinput
 
 dotfiles:
   home: "~/"
