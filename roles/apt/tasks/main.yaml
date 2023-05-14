@@ -63,3 +63,27 @@
   ansible.builtin.apt:
     name: "code"
     state: present
+
+- name: chrome | Add gpg signing key
+  become: true
+  ansible.builtin.get_url:
+    url: "{{ chrome.gpg_key }}"
+    dest: "/etc/apt/keyrings/chrome.pub"
+    mode: "u=rw,go=r"
+    force: yes
+
+- name: chrome | Add repository
+  become: true
+  ansible.builtin.apt_repository:
+    repo: >-
+      deb [arch=amd64 trusted=yes signed-by=/etc/apt/keyrings/chrome.pub] {{ chrome.repository }} stable main
+    state: "present"
+    filename: "{{ chrome.name }}"
+    update_cache: yes
+
+- name: chrome | Install
+  become: true
+  ansible.builtin.apt:
+    name: "{{ chrome.apt_name }}"
+    state: "present"
+    update_cache: yes

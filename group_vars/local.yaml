@@ -61,6 +61,12 @@ vscode:
     - libxshmfence1
   mirror: "https://packages.microsoft.com"
 
+chrome:
+  apt_name: google-chrome-stable
+  gpg_key: https://dl.google.com/linux/linux_signing_key.pub
+  repository: https://dl.google.com/linux/chrome/deb/
+  name: google-chrome
+
 system:
   locale: "en_US.UTF-8"
   language: "en_US.UTF-8"

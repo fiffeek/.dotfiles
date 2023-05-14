@@ -139,3 +139,5 @@ alias lt='exa --tree --level=2'                                         # tree
 # SSH
 # https://news.ycombinator.com/item?id=27075659
 alias ssh="TERM=xterm-256color ssh"
+
+alias vim=nvim
