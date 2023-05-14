@@ -46,6 +46,8 @@ apt_packages:
   - bluez
   - bluez-tools
   - blueman
+  # Brightness
+  - brightnessctl
 
 vscode:
   apt_deps:

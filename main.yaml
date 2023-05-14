@@ -2,6 +2,9 @@
 - name: Set up local workstation
   hosts: local
   roles:
+    - role: user
+      tags:
+        - user
     - role: apt
       tags:
         - apt

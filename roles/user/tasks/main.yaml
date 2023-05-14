@@ -1,0 +1,6 @@
+---
+- name: Add the user to video and input groups for brighness permissions
+  become: true
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    groups: video,input
