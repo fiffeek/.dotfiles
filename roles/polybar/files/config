@@ -35,7 +35,7 @@ font-1 = "Symbols Nerd Font Mono:style=Regular:size=9;2"
 
 modules-left = i3
 modules-center = title
-modules-right = cpu memory disk
+modules-right = pulseaudio battery cpu memory disk date time bluetooth
 
 
 cursor-click = pointer
@@ -48,7 +48,7 @@ type = internal/i3
 pin-workspaces = true
 enable-click = true
 enable-scroll = true
-format-padding = 1
+format-padding = 0
 show-all = true;
 ws-num = 10;
 ws-icon-0 = 1;1
@@ -98,6 +98,7 @@ format-padding = 1
 
 [module/title]
 type = internal/xwindow
+label-maxlen = 50
 
 
 [module/disk]
@@ -146,3 +147,76 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 format-foreground = ${colors.foreground}
 format-prefix-font = 1
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %m/%d%
+label = %date%
+
+format-prefix = "󰨲 "
+format-prefix-foreground = ${colors.foreground}
+format-foreground = ${colors.foreground}
+format-prefix-font = 1
+
+[module/time]
+type = internal/date
+interval = 1.0
+time = %H:%M
+label = %time%
+
+format-prefix = "󰥔 "
+format-prefix-foreground = ${colors.foreground}
+format-foreground = ${colors.foreground}
+format-prefix-font = 1
+
+[module/battery]
+type = internal/battery
+full-at = 94
+low-at = 15
+battery = BAT0
+adapter = ADP1
+poll-interval = 5
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <label-full>
+label-full = FULL
+format-full-prefix = 󱟢
+format-full-prefix-padding = 1
+animation-charging-0 = 󰢜
+animation-charging-1 = 󰂇
+animation-charging-2 = 󰢝
+animation-charging-3 = 󰢞
+animation-charging-4 = 󰂋
+animation-charging-font = 1
+animation-charging-framerate = 300
+ramp-capacity-0 = 󰁻
+ramp-capacity-1 = 󰁽
+ramp-capacity-2 = 󰁿
+ramp-capacity-3 = 󰂁
+ramp-capacity-4 = 󰂂
+ramp-capacity-font = 1
+time-format = %H:%M
+label-charging = %percentage%%
+label-discharging = %percentage%% (%time%)
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 5
+format-volume = <ramp-volume> <label-volume>
+ramp-volume-0 = 󰕿
+ramp-volume-1 = 󰖀
+ramp-volume-2 = 󰕾
+ramp-volume-font = 1
+label-muted = 󰸈
+label-muted-font = 1
+
+[module/bluetooth]
+type = custom/script
+exec = ~/.config/polybar/scripts/bluetooth.sh
+interval = 10
+click-left = exec blueman-manager
+click-right = exec ~/.config/polybar/scripts/bluetooth.sh --toggle &
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
