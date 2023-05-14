@@ -49,6 +49,8 @@ dotfiles:
   picom: "~/.config/picom"
   tlp: "/etc/"
   alacritty: "~/.config/alacritty"
+  # Xorg requires root
+  x11: "/etc/X11/xorg.conf.d/"
   gtk:
     versions:
       three: "~/.config/gtk-3.0"

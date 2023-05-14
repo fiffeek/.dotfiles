@@ -38,6 +38,9 @@
     - role: picom
       tags:
         - picom
+    - role: x11
+      tags:
+        - x11
     - role: tmux
       tags:
         - tmux
