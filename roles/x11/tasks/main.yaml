@@ -12,3 +12,10 @@
     state: link
     force: true
   become: true
+
+- name: x11 | Link Xresources config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/.Xresources"
+    dest: "{{ (dotfiles.home, '.Xresources') | path_join }}"
+    state: link
+    force: true

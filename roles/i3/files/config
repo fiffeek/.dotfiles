@@ -28,9 +28,12 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Picom
-exec --no-startup-id hsetroot -solid '#000000'
-exec --no-startup-id feh --bg-tile ~/.config/i3/tile.png
+exec_always --no-startup-id hsetroot -solid '#000000'
+exec_always --no-startup-id feh --bg-tile ~/.config/i3/tile.png
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
+
+# Autorandr to rearange monitors automatically
+exec_always --no-startup-id autorandr --change
 
 # start up polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
