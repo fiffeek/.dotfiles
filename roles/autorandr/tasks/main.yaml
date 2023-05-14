@@ -1,0 +1,12 @@
+---
+- name: autorand | Create base dir
+  ansible.builtin.file:
+    path: "{{ dotfiles.autorandr }}"
+    state: directory
+
+- name: autorand | Link all setups
+  ansible.builtin.file:
+    src: "{{ role_path }}/files"
+    dest: "{{ dotfiles.autorandr }}"
+    state: link
+    force: true

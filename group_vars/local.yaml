@@ -75,6 +75,7 @@ dotfiles:
   oh_my_zsh:
     plugins_dest: "custom/plugins"
     themes_dest: "themes"
+  autorandr: "~/.config/autorandr"
 
 asdf:
   plugins:

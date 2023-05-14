@@ -41,6 +41,9 @@
     - role: x11
       tags:
         - x11
+    - role: autorandr
+      tags:
+        - autorandr
     - role: tmux
       tags:
         - tmux
