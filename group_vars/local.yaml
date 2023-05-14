@@ -141,6 +141,10 @@ asdf:
       repository: ""
     - name: "neovim"
       repository: "https://github.com/richin13/asdf-neovim"
+    - name: "fd"
+      repository: "https://gitlab.com/wt0f/asdf-fd"
+    - name: "ripgrep"
+      repository: "https://gitlab.com/wt0f/asdf-ripgrep"
   installs:
     - name: "python"
       version: "3.11.2"
@@ -158,6 +162,12 @@ asdf:
       version: "latest:2"
     - name: "neovim"
       version: "nightly"
+    - name: "fd"
+      version: "latest"
+    - name: "bat"
+      version: "latest"
+    - name: "ripgrep"
+      version: "latest"
   globals:
     - name: "python"
       version: "3.9.0"
@@ -173,6 +183,12 @@ asdf:
       version: "latest:2"
     - name: "neovim"
       version: "nightly"
+    - name: "fd"
+      version: "latest"
+    - name: "bat"
+      version: "latest"
+    - name: "ripgrep"
+      version: "latest"
 
 localhost:
   is_laptop: true

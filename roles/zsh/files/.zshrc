@@ -67,6 +67,9 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# FZF
+export FZF_PREVIEW_WINDOW='right:65%:nohidden'
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -78,10 +81,12 @@ plugins=(
   tmux
   zsh-syntax-highlighting
   zsh-autocomplete
-  fzf-zsh-plugin
   z
   sudo
   copyfile
+  fd
+  ripgrep
+  fzf-zsh-plugin
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -140,4 +145,27 @@ alias lt='exa --tree --level=2'                                         # tree
 # https://news.ycombinator.com/item?id=27075659
 alias ssh="TERM=xterm-256color ssh"
 
+# VIM == NVIM
 alias vim=nvim
+
+# Options
+setopt AUTO_CD # instead of 'cd folder' if you could just type 'folder'
+
+# History
+setopt APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_NO_STORE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+setopt HIST_VERIFY
+setopt SHARE_HISTORY
+setopt INTERACTIVE_COMMENTS        # pound sign in interactive prompt
+HISTFILE=~/.zsh_history            # where to save zsh history
+HISTSIZE=10000
+SAVEHIST=10000
