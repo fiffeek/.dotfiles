@@ -38,8 +38,21 @@ apt_packages:
   - coreutils
   - tlp
   - tlp-rdw
-  - xapt
   - xserver-xorg-input-libinput
+
+vscode:
+  apt_deps:
+    - ca-certificates
+    - apt-transport-https
+    - gconf2
+    - libasound2
+    - libgtk2.0-0
+    - libxss1
+    - libxcb-dri3-0
+    - libdrm2
+    - libgbm1
+    - libxshmfence1
+  mirror: "https://packages.microsoft.com"
 
 dotfiles:
   home: "~/"
