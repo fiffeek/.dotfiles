@@ -39,6 +39,9 @@ apt_packages:
   - tlp
   - tlp-rdw
   - xserver-xorg-input-libinput
+  # Mutli monitor tooling
+  - arandr
+  - autorandr
 
 vscode:
   apt_deps:
