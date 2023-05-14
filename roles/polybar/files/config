@@ -7,6 +7,8 @@ disabled = #707880
 accent = #7aa2f7
 
 [bar/top]
+monitor = ${env:MONITOR:}
+
 bottom = false
 fixed-center = true
 

@@ -6,7 +6,10 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
-# Launch polybar
-polybar top 2>&1 | tee -a /tmp/polybar.log & disown
+
+for m in $(polybar --list-monitors | cut -d":" -f1); do
+   MONITOR=$m polybar top 2>&1 | tee -a /tmp/polybar.log & disown
+done
+
 
 echo "Polybar launched..."
