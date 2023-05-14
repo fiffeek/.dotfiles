@@ -235,3 +235,4 @@ focus_follows_mouse no
 
 # Settings bindings
 bindsym $mod+b exec blueman-manager
+bindsym $mod+c exec arandr
