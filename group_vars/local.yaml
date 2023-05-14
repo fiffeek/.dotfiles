@@ -42,6 +42,10 @@ apt_packages:
   # Mutli monitor tooling
   - arandr
   - autorandr
+  # Bluetooth
+  - bluez
+  - bluez-tools
+  - blueman
 
 vscode:
   apt_deps:

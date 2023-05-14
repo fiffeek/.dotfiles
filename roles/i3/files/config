@@ -34,6 +34,9 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf
 # Autorandr to rearange monitors automatically
 exec_always --no-startup-id autorandr --change
 
+# Bluetooth
+exec --no-startup-id blueman-applet
+
 # start up polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
@@ -230,6 +233,5 @@ smart_gaps on
 
 focus_follows_mouse no
 
-# GNOME settings binds
-bindsym $mod+b exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center bluetooth
-bindsym $mod+c exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
+# Settings bindings
+bindsym $mod+b exec blueman-manager
