@@ -61,6 +61,10 @@ vscode:
     - libxshmfence1
   mirror: "https://packages.microsoft.com"
 
+system:
+  locale: "en_US.UTF-8"
+  language: "en_US.UTF-8"
+
 dotfiles:
   home: "~/"
   i3: "~/.config/i3/"

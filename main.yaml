@@ -8,6 +8,9 @@
     - role: fonts
       tags:
         - fonts
+    - role: locale
+      tags:
+        - locale
     - role: tlp
       tags:
         - tlp
