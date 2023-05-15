@@ -81,6 +81,7 @@ dotfiles:
   picom: "~/.config/picom"
   tlp: "/etc/"
   alacritty: "~/.config/alacritty"
+  nvim: "~/.config/nvim"
   # Xorg requires root
   x11: "/etc/X11/xorg.conf.d/"
   gtk:

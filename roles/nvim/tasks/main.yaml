@@ -1,0 +1,12 @@
+---
+- name: nvim | Create config dir
+  ansible.builtin.file:
+    path: "{{ dotfiles.nvim }}"
+    state: directory
+
+- name: nvim | Link config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files"
+    dest: "{{ dotfiles.nvim }}"
+    state: link
+    force: true
