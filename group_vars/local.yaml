@@ -48,6 +48,8 @@ apt_packages:
   - blueman
   # Brightness
   - brightnessctl
+  # Screenshot
+  - flameshot
 
 vscode:
   apt_deps:
