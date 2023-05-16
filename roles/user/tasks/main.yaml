@@ -4,3 +4,5 @@
   ansible.builtin.user:
     name: "{{ ansible_user_id }}"
     groups: video,input
+    # Do not remove the user from the existing groups
+    append: true
