@@ -16,12 +16,24 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
+local o = vim.o
+
+o.background = 'dark'   -- Dark background
+o.termguicolors = true  -- Enable 256 colors
+o.signcolumn = 'yes'    -- Always show signcolumn
+
 require('lazy').setup({
-    -- tokyonight colorscheme
+    -- Appearance
     {
-        "folke/tokyonight.nvim",
-        lazy = true,
-        opts = { style = "night" },
+      'folke/tokyonight.nvim',
+      lazy = false,
+      priority = 1000,
+      config = function()
+        require('tokyonight').setup {
+          style = 'night',
+        }
+        vim.cmd('colorscheme tokyonight')
+      end
     },
     -- pending keybinds
     { 'folke/which-key.nvim', opts = {} },
