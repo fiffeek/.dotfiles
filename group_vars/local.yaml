@@ -148,6 +148,8 @@ asdf:
       repository: "https://gitlab.com/wt0f/asdf-fd"
     - name: "ripgrep"
       repository: "https://gitlab.com/wt0f/asdf-ripgrep"
+    - name: "lazygit"
+      repository: "https://github.com/nklmilojevic/asdf-lazygit.git"
   installs:
     - name: "python"
       version: "3.11.2"
@@ -171,6 +173,8 @@ asdf:
       version: "latest"
     - name: "ripgrep"
       version: "latest"
+    - name: "lazygit"
+      version: "latest"
   globals:
     - name: "python"
       version: "3.9.0"
@@ -191,6 +195,8 @@ asdf:
     - name: "bat"
       version: "latest"
     - name: "ripgrep"
+      version: "latest"
+    - name: "lazygit"
       version: "latest"
 
 localhost:
