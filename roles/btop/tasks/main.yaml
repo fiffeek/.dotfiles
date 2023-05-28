@@ -1,0 +1,12 @@
+---
+- name: btop | Create base dir
+  ansible.builtin.file:
+    path: "{{ dotfiles.btop }}"
+    state: directory
+
+- name: btop | Link all setups
+  ansible.builtin.file:
+    src: "{{ role_path }}/files"
+    dest: "{{ dotfiles.btop }}"
+    state: link
+    force: true

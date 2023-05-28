@@ -50,6 +50,9 @@
     - role: autorandr
       tags:
         - autorandr
+    - role: btop
+      tags:
+        - btop
     - role: tmux
       tags:
         - tmux

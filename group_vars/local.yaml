@@ -50,6 +50,8 @@ apt_packages:
   - brightnessctl
   # Screenshot
   - flameshot
+  # Better top
+  - btop
 
 vscode:
   apt_deps:
@@ -76,6 +78,7 @@ system:
   language: "en_US.UTF-8"
 
 dotfiles:
+  btop: "~/.config/btop"
   home: "~/"
   i3: "~/.config/i3/"
   polybar: "~/.config/polybar"
