@@ -82,6 +82,7 @@ dotfiles:
   home: "~/"
   i3: "~/.config/i3/"
   polybar: "~/.config/polybar"
+  tmuxp: "~/.tmuxp"
   rofi: "~/.config/rofi"
   picom: "~/.config/picom"
   tlp: "/etc/"

@@ -1,0 +1,27 @@
+session_name: nvim-dev
+windows:
+- layout: d39f,240x69,0,0,2
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: nvim
+  start_directory: /home/fiffeek/.dotfiles
+  window_name: nvim
+- focus: 'true'
+  layout: 00a9,240x69,0,0{119x69,0,0,3,120x69,120,0[120x34,120,0,4,120x34,120,35,5]}
+  options:
+    automatic-rename: 'off'
+    window-active-style: ''
+  panes:
+  - shell_command:
+    - cd /home/fiffeek/.dotfiles
+    - zsh
+  - focus: 'true'
+    shell_command:
+    - cd /home/fiffeek/.dotfiles
+    - python3
+  - shell_command:
+    - cd /home/fiffeek/.tmux/plugins/tpm
+    - zsh
+  window_name: terminal

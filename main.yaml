@@ -56,6 +56,9 @@
     - role: tmux
       tags:
         - tmux
+    - role: tmuxp
+      tags:
+        - tmuxp
     - role: nvim
       tags:
         - nvim
