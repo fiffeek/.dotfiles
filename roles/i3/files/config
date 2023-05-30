@@ -249,4 +249,5 @@ bindsym $mod+b exec blueman-manager
 bindsym $mod+c exec arandr
 
 # Browser
-bindsym $mod+Shift+Return exec google-chrome --password-store=gnome
+bindsym $mod+Shift+Return exec firefox 
+bindsym $mod+Shift+g exec google-chrome --password-store=gnome
