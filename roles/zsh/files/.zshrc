@@ -173,3 +173,8 @@ setopt INTERACTIVE_COMMENTS        # pound sign in interactive prompt
 HISTFILE=~/.zsh_history            # where to save zsh history
 HISTSIZE=10000
 SAVEHIST=10000
+
+# Presenter mode
+alias presenter_mode_on="alacritty msg config -w ${ALACRITTY_WINDOW_ID} font.size=18"
+alias presenter_mode_off="alacritty msg config -w ${ALACRITTY_WINDOW_ID} --reset"
+
