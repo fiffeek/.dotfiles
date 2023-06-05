@@ -20,3 +20,9 @@ Due to extensive RSI I moved to an ortholinear keyboard, [Moonlander](https://ww
 Any keybinds try to leverage [my layout](https://configure.zsa.io/moonlander/layouts/manJd/latest/0).
 I recommend looking into [home row modifiers](https://precondition.github.io/home-row-mods) to minimize hands movement, which helped tremendously in my case.
 
+## Preview
+
+Here's a preview what the desktop environment looks like:
+
+![preview](./resources/preview.png)
+
