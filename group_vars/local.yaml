@@ -54,6 +54,8 @@ apt_packages:
   - btop
   # Notifications
   - dunst
+  # File manager
+  - ranger
 
 vscode:
   apt_deps:
