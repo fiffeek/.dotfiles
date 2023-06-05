@@ -1,10 +1,11 @@
 # .dotfiles
 Personal dotfiles managed by Ansible.
 
-I use Ubuntu. Ansible is leveraged to make this set up more easy
+I use Ubuntu. [Ansible](https://github.com/ansible/ansible) is leveraged to make this set up easier
 on multiple machines. In the future this might be changed to [nix](https://github.com/NixOS/nix) instead.
 This set up is very specific to my needs, I encourage the reader to use it 
-as a reference, rather than use directly.
+as a reference, rather than use directly. This config is not static, and 
+does change over time.
 
 ## Terminal driven development 
 
