@@ -40,6 +40,9 @@ exec --no-startup-id blueman-applet
 # start up polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
+# Notifications deamon
+exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
+
 # Keyring
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 

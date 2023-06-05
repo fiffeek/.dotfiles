@@ -1,0 +1,13 @@
+---
+- name: dunst | Create config dir
+  ansible.builtin.file:
+    path: "{{ dotfiles.dunst }}"
+    state: directory
+    mode: "0755"
+
+- name: dunst | Link config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files"
+    dest: "{{ dotfiles.dunst }}"
+    state: link
+    force: true

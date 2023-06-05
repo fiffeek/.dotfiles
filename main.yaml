@@ -59,6 +59,9 @@
     - role: tmuxp
       tags:
         - tmuxp
+    - role: dunst
+      tags:
+        - dunst
     - role: nvim
       tags:
         - nvim

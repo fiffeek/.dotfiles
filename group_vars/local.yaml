@@ -52,6 +52,8 @@ apt_packages:
   - flameshot
   # Better top
   - btop
+  # Notifications
+  - dunst
 
 vscode:
   apt_deps:
@@ -82,6 +84,7 @@ dotfiles:
   home: "~/"
   i3: "~/.config/i3/"
   polybar: "~/.config/polybar"
+  dunst: "~/.config/dunst"
   tmuxp: "~/.tmuxp"
   rofi: "~/.config/rofi"
   picom: "~/.config/picom"
