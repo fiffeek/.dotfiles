@@ -178,3 +178,6 @@ SAVEHIST=10000
 alias presenter_mode_on="alacritty msg config -w ${ALACRITTY_WINDOW_ID} font.size=18"
 alias presenter_mode_off="alacritty msg config -w ${ALACRITTY_WINDOW_ID} --reset"
 
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
+
