@@ -68,7 +68,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # FZF
-export FZF_PREVIEW_WINDOW='right:65%:nohidden'
+export FZF_PREVIEW_WINDOW='right:50%:nohidden'
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
