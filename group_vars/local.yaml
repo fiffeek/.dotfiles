@@ -82,6 +82,7 @@ system:
   language: "en_US.UTF-8"
 
 dotfiles:
+  ssh: "~/.ssh"
   btop: "~/.config/btop"
   home: "~/"
   i3: "~/.config/i3/"

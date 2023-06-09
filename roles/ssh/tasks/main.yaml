@@ -1,0 +1,5 @@
+---
+- name: ssh | Copy ssh config
+  ansible.builtin.copy:
+    src: "{{ role_path }}/files/config.vault"
+    dest: "{{ dotfiles.ssh }}/config.vault"

@@ -65,3 +65,6 @@
     - role: nvim
       tags:
         - nvim
+    - role: ssh
+      tags:
+        - ssh
