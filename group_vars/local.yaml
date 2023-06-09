@@ -160,6 +160,8 @@ asdf:
       repository: "https://gitlab.com/wt0f/asdf-ripgrep"
     - name: "lazygit"
       repository: "https://github.com/nklmilojevic/asdf-lazygit.git"
+    - name: "lazydocker"
+      repository: "https://github.com/comdotlinux/asdf-lazydocker"
   installs:
     - name: "python"
       version: "3.11.2"
@@ -185,6 +187,10 @@ asdf:
       version: "latest"
     - name: "lazygit"
       version: "latest"
+    - name: "lazydocker"
+      version: "latest"
+    - name: "k9s"
+      version: "latest"
   globals:
     - name: "python"
       version: "3.9.0"
@@ -207,6 +213,10 @@ asdf:
     - name: "ripgrep"
       version: "latest"
     - name: "lazygit"
+      version: "latest"
+    - name: "lazydocker"
+      version: "latest"
+    - name: "k9s"
       version: "latest"
 
 localhost:
