@@ -56,4 +56,12 @@
   user:
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh
-    
+  when: has_root_access
+
+- name: zsh | Change default shell to /bin/zsh for non root users
+  ansible.builtin.blockinfile:
+    path: "{{ (dotfiles.home, '.profile') | path_join }}"
+    block: |
+      export SHELL=`which zsh`
+      [ -z "$ZSH_VERSION" ] && exec "$SHELL" -l  
+  when: not has_root_access

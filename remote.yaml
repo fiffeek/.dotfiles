@@ -1,0 +1,7 @@
+---
+- name: Set up remote workstations
+  hosts: remotessh
+  roles:
+    - role: zsh
+      tags:
+        - zsh

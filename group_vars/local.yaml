@@ -221,3 +221,5 @@ asdf:
 
 localhost:
   is_laptop: true
+
+has_root_access: true

@@ -1,0 +1,7 @@
+---
+dotfiles:
+  home: "~/"
+  oh_my_zsh:
+    plugins_dest: "custom/plugins"
+    themes_dest: "themes"
+has_root_access: false

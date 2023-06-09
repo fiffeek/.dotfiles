@@ -1,0 +1,6 @@
+[remotessh]
+localhost
+
+[remotessh:vars]
+ansible_connection=local
+
