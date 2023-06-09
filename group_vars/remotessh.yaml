@@ -4,4 +4,16 @@ dotfiles:
   oh_my_zsh:
     plugins_dest: "custom/plugins"
     themes_dest: "themes"
+
+asdf:
+  plugins:
+    - name: "neovim"
+      repository: "https://github.com/richin13/asdf-neovim.git"
+  installs:
+    - name: "neovim"
+      version: "0.9.1"
+  globals:
+    - name: "neovim"
+      version: "0.9.1"
+
 has_root_access: false
