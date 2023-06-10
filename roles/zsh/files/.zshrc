@@ -182,5 +182,6 @@ alias presenter_mode_off="alacritty msg config -w -1 --reset"
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
-
-export PATH=$PATH:$HOME/.bin
+# Add custom binaries to the path
+export PATH=$HOME/.bin:$HOME/.bin/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/.bin/lib:$LD_LIBRARY_PATH

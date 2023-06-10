@@ -1,7 +1,7 @@
 ---
-- name: tmux | Clone tmux plugin manager 
+- name: tmux | Clone tmux plugin manager
   ansible.builtin.git:
-    repo: "https://github.com/tmux-plugins/tpm"  
+    repo: "https://github.com/tmux-plugins/tpm"
     dest: "{{ (dotfiles.home, '.tmux/plugins/tpm') | path_join }}"
     version: "master"
     update: false

@@ -2,3 +2,4 @@
 
 - include_tasks: zsh.yaml
 - include_tasks: git.yaml
+- include_tasks: tmux.yaml

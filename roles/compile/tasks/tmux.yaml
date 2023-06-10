@@ -1,0 +1,33 @@
+---
+# Requires openssl-devel, can be done without:
+# https://help.dreamhost.com/hc/en-us/articles/360001435926-Installing-OpenSSL-locally-under-your-username
+- name: Get libevent
+  ansible.builtin.shell: |
+    curl -Lo libevent.tar.gz https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz 
+    tar -xf libevent.tar.gz
+    cd libevent-2.1.12-stable
+
+    ./configure --prefix=$HOME/.bin
+    make
+    make install
+
+    cd ..
+    rm -rf libevent.tar.gz
+
+- name: Get tmux
+  ansible.builtin.shell: |
+    curl -Lo tmux.tar.gz https://github.com/tmux/tmux/releases/download/3.2a/tmux-3.2a.tar.gz
+    tar -xf tmux.tar.gz
+    cd tmux-3.2a
+
+    export INSTALL_PATH="$HOME/.bin"
+    export LD_LIBRARY_PATH=$INSTALL_PATH/lib:$LD_LIBRARY_PATH
+    export CFLAGS="-I$INSTALL_PATH/include -I$INSTALL_PATH/include/ncurses"
+    export CPPFLAGS="-I$INSTALL_PATH/include -I$INSTALL_PATH/include/ncurses" LDFLAGS="-L$INSTALL_PATH/lib"
+
+    ./configure --prefix=$HOME/.bin 
+    make
+    make install
+
+    cd ..
+    rm -rf tmux.tar.gz
