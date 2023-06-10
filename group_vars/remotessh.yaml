@@ -43,3 +43,4 @@ external_bins:
       - --strip-components=1
 
 has_root_access: false
+zsh_location: "~/bin/zsh"

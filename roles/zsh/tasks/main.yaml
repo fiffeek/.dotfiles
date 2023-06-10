@@ -55,7 +55,7 @@
   become: true
   user:
     name: "{{ ansible_user_id }}"
-    shell: /bin/zsh
+    shell: "{{ zsh_location }}"
   when: has_root_access
 
 - name: zsh | Change default shell to /bin/zsh for non root users
@@ -64,6 +64,6 @@
     block: |
       PATH=$PATH:$HOME/.bin
       export PATH
-      export SHELL=/bin/zsh
-      exec /bin/zsh -l
+      export SHELL={{ zsh_location }}
+      exec {{ zsh_location }} -l
   when: not has_root_access

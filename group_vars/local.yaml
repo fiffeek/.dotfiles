@@ -225,3 +225,4 @@ localhost:
   is_laptop: true
 
 has_root_access: true
+zsh_location: "/bin/zsh"
