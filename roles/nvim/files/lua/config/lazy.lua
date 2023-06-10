@@ -14,6 +14,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.test" },
     { import = "lazyvim.plugins.extras.lang.go" },
     { import = "lazyvim.plugins.extras.util.project" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
     -- import/override with your plugins
     { import = "plugins" },
     { import = "plugins.lang" },
