@@ -140,6 +140,7 @@ alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + e
 # speciality views
 alias lS='exa -1'			                                                  # one column, just names
 alias lt='exa --tree --level=2'                                         # tree
+alias tree='exa --tree'
 
 # Bluetooth ON/OFF with restart due to TLP interfering after the startup
 alias bon="rfkill block bluetooth && rfkill unblock bluetooth && bluetoothctl power on"
@@ -175,9 +176,11 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 # Presenter mode
-alias presenter_mode_on="alacritty msg config -w ${ALACRITTY_WINDOW_ID} font.size=18"
-alias presenter_mode_off="alacritty msg config -w ${ALACRITTY_WINDOW_ID} --reset"
+alias presenter_mode_on="alacritty msg config -w -1 font.size=18"
+alias presenter_mode_off="alacritty msg config -w -1 --reset"
 
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
+
+export PATH=$PATH:$HOME/.bin
