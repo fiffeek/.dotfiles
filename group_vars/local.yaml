@@ -162,6 +162,8 @@ asdf:
       repository: "https://github.com/nklmilojevic/asdf-lazygit.git"
     - name: "lazydocker"
       repository: "https://github.com/comdotlinux/asdf-lazydocker"
+    - name: "pnpm"
+      repository: "https://github.com/jonathanmorley/asdf-pnpm"
   installs:
     - name: "python"
       version: "3.11.2"
@@ -191,6 +193,8 @@ asdf:
       version: "latest"
     - name: "k9s"
       version: "latest"
+    - name: "pnpm"
+      version: "latest"
   globals:
     - name: "python"
       version: "3.9.0"
@@ -217,6 +221,8 @@ asdf:
     - name: "lazydocker"
       version: "latest"
     - name: "k9s"
+      version: "latest"
+    - name: "pnpm"
       version: "latest"
 
 external_bins: []
