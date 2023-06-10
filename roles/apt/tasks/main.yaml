@@ -1,9 +1,7 @@
 ---
 - name: i3 | Download package
   shell: >
-    /usr/lib/apt/apt-helper download-file
-    https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2023.02.18_all.deb
-    /tmp/keyring.deb SHA256:a511ac5f10cd811f8a4ca44d665f2fa1add7a9f09bef238cdfad8461f5239cc4
+    /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2023.02.18_all.deb /tmp/keyring.deb SHA256:a511ac5f10cd811f8a4ca44d665f2fa1add7a9f09bef238cdfad8461f5239cc4
   changed_when: false
 
 - name: i3 | Install keyring.deb
@@ -51,10 +49,7 @@
   become: true
   apt_repository:
     repo: >-
-      deb [arch=amd64
-      trusted=yes
-      signed-by=/etc/apt/keyrings/microsoft.asc]
-      {{ vscode.mirror }}/repos/code stable main
+      deb [arch=amd64 trusted=yes signed-by=/etc/apt/keyrings/microsoft.asc] {{ vscode.mirror }}/repos/code stable main
     filename: vscode
     state: present
 
@@ -85,5 +80,24 @@
   become: true
   ansible.builtin.apt:
     name: "{{ chrome.apt_name }}"
+    state: "present"
+    update_cache: yes
+
+- name: spotify | Add apt key
+  become: true
+  apt_key:
+    url: "https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg"
+    state: present
+
+- name: spotify | Add spotify repository
+  become: true
+  apt_repository:
+    repo: deb http://repository.spotify.com stable non-free'
+    state: present
+
+- name: spotify | Install
+  become: true
+  ansible.builtin.apt:
+    name: "spotify-client"
     state: "present"
     update_cache: yes
