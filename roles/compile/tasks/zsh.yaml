@@ -1,11 +1,13 @@
 ---
 - name: Get ncurses
   ansible.builtin.shell: |
-    export CXXFLAGS=" -fPIC" CFLAGS=" -fPIC" CPPFLAGS="-I${HOME}/include" LDFLAGS="-L${HOME}/lib"
+    INSTALL_PATH="$HOME/.bin"
+    export CXXFLAGS=" -fPIC" CFLAGS=" -fPIC" CPPFLAGS="-I${INSTALL_PATH}/include" LDFLAGS="-L${INSTALL_PATH}/lib"
+
     curl https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.2.tar.gz -o ncurses-6.2.tar.gz
     tar -xzvf ncurses-6.2.tar.gz
     cd ncurses-6.2
-    ./configure --prefix=$HOME 
+    ./configure --prefix=$HOME/.bin 
     make -j
     make install
     cd .. && rm ncurses-6.2.tar.gz && rm -r ncurses-6.2
@@ -15,7 +17,14 @@
     curl -L https://sourceforge.net/projects/zsh/files/latest/download -o zsh.tar.xz
     mkdir -p zsh && tar xJvf zsh.tar.xz -C zsh --strip-components 1
     cd zsh
-    ./configure --prefix=$HOME
+
+    INSTALL_PATH="$HOME/.bin"
+    export PATH=$INSTALL_PATH/bin:$PATH
+    export LD_LIBRARY_PATH=$INSTALL_PATH/lib:$LD_LIBRARY_PATH
+    export CFLAGS=-I$INSTALL_PATH/include
+    export CPPFLAGS="-I$INSTALL_PATH/include" LDFLAGS="-L$INSTALL_PATH/lib"
+
+    ./configure --prefix=$HOME/.bin
     make -j
     make install
     cd .. && rm zsh.tar.xz && rm -r zsh

@@ -5,12 +5,15 @@
     - role: bin
       tags:
         - bin
-    - role: compilezsh
+    - role: compile
       tags:
-        - compilezsh
+        - compile
     - role: zsh
       tags:
         - zsh
     - role: asdf
       tags:
         - asdf
+    - role: nvim
+      tags:
+        - nvim

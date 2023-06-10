@@ -1,6 +1,7 @@
 ---
 dotfiles:
   home: "~/"
+  nvim: "~/.config/nvim"
   oh_my_zsh:
     plugins_dest: "custom/plugins"
     themes_dest: "themes"
@@ -9,12 +10,18 @@ asdf:
   plugins:
     - name: "neovim"
       repository: "https://github.com/richin13/asdf-neovim.git"
+    - name: "lazygit"
+      repository: "https://github.com/nklmilojevic/asdf-lazygit.git"
   installs:
     - name: "neovim"
       version: "0.9.1"
+    - name: "lazygit"
+      version: "latest"
   globals:
     - name: "neovim"
       version: "0.9.1"
+    - name: "lazygit"
+      version: "latest"
 
 external_bins:
   - name: "fd"
@@ -43,4 +50,5 @@ external_bins:
       - --strip-components=1
 
 has_root_access: false
-zsh_location: "~/bin/zsh"
+zsh_location: "~/.bin/bin/zsh"
+attach_to_profile: true

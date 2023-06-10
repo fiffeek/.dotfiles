@@ -1,0 +1,4 @@
+---
+
+- include_tasks: zsh.yaml
+- include_tasks: git.yaml

@@ -1,0 +1,13 @@
+---
+# Requires zlib-devel, autoconf, curl, gcc, libcurl-devel to be present on the machine
+# Git required for Neovim (lazy.nvim) is >2.x
+- name: Get git
+  ansible.builtin.shell: |
+    curl -Lo git.tar.gz https://github.com/git/git/archive/v2.34.1.tar.gz
+    tar zxf git.tar.gz
+    mv git-2.34.1 git
+    cd git
+    make configure
+    ./configure --prefix=$HOME/.bin --with-curl --with-expat
+    make NO_GETTEXT=Nope NO_TCLTK=Nope
+    make install NO_GETTEXT=Nope NO_TCLTK=Nope

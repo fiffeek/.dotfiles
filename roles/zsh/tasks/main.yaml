@@ -62,8 +62,7 @@
   ansible.builtin.blockinfile:
     path: "{{ (dotfiles.home, '.bash_profile') | path_join }}"
     block: |
-      PATH=$PATH:$HOME/.bin
-      export PATH
+      export PATH=$HOME/.bin:$HOME/.bin/bin:$PATH
       export SHELL={{ zsh_location }}
       exec {{ zsh_location }} -l
-  when: not has_root_access
+  when: not has_root_access and attach_to_profile
