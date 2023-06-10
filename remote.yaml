@@ -2,6 +2,9 @@
 - name: Set up remote workstations
   hosts: remotessh
   roles:
+    - role: bin
+      tags:
+        - bin
     - role: zsh
       tags:
         - zsh

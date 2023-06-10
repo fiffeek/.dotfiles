@@ -219,6 +219,8 @@ asdf:
     - name: "k9s"
       version: "latest"
 
+external_bins: []
+
 localhost:
   is_laptop: true
 

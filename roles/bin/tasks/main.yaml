@@ -1,0 +1,17 @@
+---
+- name: Create bin dir
+  ansible.builtin.file:
+    path: "{{ (dotfiles.home, '.bin') | path_join }}"
+    state: directory
+
+- name: Extract external binaries
+  unarchive:
+    src: "{{ item.source }}"
+    remote_src: yes
+    dest: "{{ (dotfiles.home, '.bin') | path_join }}"
+    mode: "755"
+    extra_opts: "{{ item.extra_opts }}"
+    include: "{{ item.location }}"
+  register: _unarchive
+  ignore_errors: true
+  loop: "{{ external_bins }}"
