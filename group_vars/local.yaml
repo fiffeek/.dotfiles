@@ -88,6 +88,7 @@ dotfiles:
   i3: "~/.config/i3/"
   polybar: "~/.config/polybar"
   dunst: "~/.config/dunst"
+  tmux: "~/.config/tmux"
   tmuxp: "~/.tmuxp"
   rofi: "~/.config/rofi"
   picom: "~/.config/picom"

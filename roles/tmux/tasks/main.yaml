@@ -19,3 +19,10 @@
     dest: "{{ dotfiles.home }}/.tmux.remote.conf"
     state: link
     force: true
+
+- name: tmux | Link inner config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/tmux"
+    dest: "{{ dotfiles.tmux }}"
+    state: link
+    force: true
