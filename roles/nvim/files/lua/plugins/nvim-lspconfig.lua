@@ -5,7 +5,15 @@ return {
       pyright = {},
       ansiblels = {},
       marksman = {},
-      cssls = {},
+      cssls = {
+        settings = {
+          css = {
+            lint = {
+              unknownAtRules = "ignore",
+            },
+          },
+        },
+      },
       html = {},
       yamlls = {
         settings = {
