@@ -11,6 +11,7 @@ return {
         nls.builtins.formatting.isort,
         nls.builtins.code_actions.shellcheck,
         nls.builtins.diagnostics.terraform_validate,
+        nls.builtins.formatting.prettierd,
         nls.builtins.formatting.terraform_fmt,
         nls.builtins.formatting.clang_format,
       },
