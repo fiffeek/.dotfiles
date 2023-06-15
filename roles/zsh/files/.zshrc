@@ -70,6 +70,9 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # FZF
 export FZF_PREVIEW_WINDOW='right:50%:nohidden'
 
+# Lesspipe
+eval "$(lesspipe)"
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -185,3 +188,6 @@ export MANWIDTH=999
 # Add custom binaries to the path
 export PATH=$HOME/.bin:$HOME/.bin/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/.bin/lib:$LD_LIBRARY_PATH
+
+# FZF advanced preview
+export FZF_PREVIEW_ADVANCED=true
