@@ -59,6 +59,8 @@ apt_packages:
   # Terminal helpers
   - chafa
   - exiftool
+  # Player control
+  - playerctl
 
 vscode:
   apt_deps:
