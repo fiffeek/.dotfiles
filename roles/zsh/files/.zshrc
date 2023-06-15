@@ -190,6 +190,7 @@ export MANWIDTH=999
 # Add custom binaries to the path
 export PATH=$HOME/.bin:$HOME/.bin/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/.bin/lib:$LD_LIBRARY_PATH
+export PATH=$HOME/.spicetify:$PATH
 
 # FZF advanced preview
 export FZF_PREVIEW_ADVANCED=true

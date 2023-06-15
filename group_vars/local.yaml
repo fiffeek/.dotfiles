@@ -87,6 +87,9 @@ system:
 dotfiles:
   ssh: "~/.ssh"
   btop: "~/.config/btop"
+  spicetify:
+    bin: "~/.spicetify"
+    config: "~/.config/spicetify"
   home: "~/"
   i3: "~/.config/i3/"
   polybar: "~/.config/polybar"
@@ -236,3 +239,8 @@ localhost:
 
 has_root_access: true
 zsh_location: "/bin/zsh"
+
+spicetify:
+  source: "https://github.com/spicetify/spicetify-cli/releases/download/v2.20.0/spicetify-2.20.0-linux-amd64.tar.gz"
+  themes:
+    source: "https://github.com/spicetify/spicetify-themes"

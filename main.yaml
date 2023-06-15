@@ -68,3 +68,6 @@
     - role: ssh
       tags:
         - ssh
+    - role: spicetify
+      tags:
+        - spicetify

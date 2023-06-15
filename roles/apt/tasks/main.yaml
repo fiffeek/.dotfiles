@@ -92,7 +92,7 @@
 - name: spotify | Add spotify repository
   become: true
   apt_repository:
-    repo: deb http://repository.spotify.com stable non-free'
+    repo: deb http://repository.spotify.com stable non-free
     state: present
 
 - name: spotify | Install
