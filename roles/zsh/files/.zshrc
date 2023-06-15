@@ -155,6 +155,8 @@ alias ssh="TERM=xterm-256color ssh"
 
 # VIM == NVIM
 alias vim=nvim
+# Well, this seems to be a common mistake!
+alias neovim=nvim
 
 # Options
 setopt AUTO_CD # instead of 'cd folder' if you could just type 'folder'
