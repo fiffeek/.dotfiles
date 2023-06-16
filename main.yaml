@@ -2,6 +2,9 @@
 - name: Set up local workstation
   hosts: local
   roles:
+    - role: bin
+      tags:
+        - bin
     - role: user
       tags:
         - user

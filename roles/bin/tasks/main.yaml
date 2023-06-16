@@ -14,4 +14,11 @@
     include: "{{ item.location }}"
   register: _unarchive
   ignore_errors: true
-  loop: "{{ external_bins }}"
+  loop: "{{ external_bins | selectattr('type', 'equalto', 'archive') }}"
+
+- name: Copy loose binaries
+  get_url:
+    url: "{{ item.source }}"
+    dest: "{{ (dotfiles.home, '.bin', item.name) | path_join }}"
+    mode: "755"
+  loop: "{{ external_bins | selectattr('type', 'equalto', 'loose') }}"

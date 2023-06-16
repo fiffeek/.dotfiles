@@ -234,7 +234,10 @@ asdf:
     - name: "pnpm"
       version: "latest"
 
-external_bins: []
+external_bins:
+  - name: "obsidian"
+    source: "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.3.5/Obsidian-1.3.5.AppImage"
+    type: "loose"
 
 localhost:
   is_laptop: true
