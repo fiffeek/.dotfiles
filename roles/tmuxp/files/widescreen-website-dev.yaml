@@ -1,0 +1,13 @@
+session_name: '0'
+windows:
+- focus: 'true'
+  layout: a79e,382x69,0,0{261x69,0,0,0,120x69,262,0[120x34,262,0,3,120x34,262,35,4]}
+  options:
+    window-active-style: ''
+  panes:
+  - nvim
+  - zsh
+  - focus: 'true'
+    shell_command: python3
+  start_directory: /home/fiffeek/personal/filipmikina.com
+  window_name: zsh
