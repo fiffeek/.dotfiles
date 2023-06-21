@@ -84,7 +84,6 @@ plugins=(
   tmux
   zsh-syntax-highlighting
   zsh-autocomplete
-  z
   sudo
   copyfile
   fd
@@ -203,3 +202,5 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# zoxide
+eval "$(zoxide init zsh)"

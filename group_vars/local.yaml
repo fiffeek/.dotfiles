@@ -173,6 +173,8 @@ asdf:
       repository: "https://github.com/comdotlinux/asdf-lazydocker"
     - name: "pnpm"
       repository: "https://github.com/jonathanmorley/asdf-pnpm"
+    - name: "zoxide"
+      repository: "https://github.com/nyrst/asdf-zoxide.git"
   installs:
     - name: "python"
       version: "3.11.2"
@@ -204,6 +206,8 @@ asdf:
       version: "latest"
     - name: "pnpm"
       version: "latest"
+    - name: "zoxide"
+      version: "latest"
   globals:
     - name: "python"
       version: "3.9.0"
@@ -232,6 +236,8 @@ asdf:
     - name: "k9s"
       version: "latest"
     - name: "pnpm"
+      version: "latest"
+    - name: "zoxide"
       version: "latest"
 
 external_bins:
