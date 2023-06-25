@@ -8,7 +8,7 @@
     version: v0.11.3
 
 - name: asdf | Install plugins
-  ansible.builtin.shell: "asdf plugin-add {{ item.name }} {{ item.repository }}"
+  ansible.builtin.shell: "{{ asdf.extra_env }} asdf plugin-add {{ item.name }} {{ item.repository }}"
   args:
     creates: ".asdf/plugins/{{ item.name }}"
     chdir: "{{ ansible_user_dir }}"

@@ -116,6 +116,7 @@ dotfiles:
   autorandr: "~/.config/autorandr"
 
 asdf:
+  extra_env: "ASDF_PYAPP_INCLUDE_DEPS=1"
   plugins:
     - name: "python"
       repository: ""
@@ -175,6 +176,8 @@ asdf:
       repository: "https://github.com/jonathanmorley/asdf-pnpm"
     - name: "zoxide"
       repository: "https://github.com/nyrst/asdf-zoxide.git"
+    - name: "ansible"
+      repository: "https://github.com/amrox/asdf-pyapp.git"
   installs:
     - name: "python"
       version: "3.11.2"
@@ -208,6 +211,8 @@ asdf:
       version: "latest"
     - name: "zoxide"
       version: "latest"
+    - name: "ansible"
+      version: "8.1.0"
   globals:
     - name: "python"
       version: "3.9.0"
@@ -239,6 +244,8 @@ asdf:
       version: "latest"
     - name: "zoxide"
       version: "latest"
+    - name: "ansible"
+      version: "8.1.0"
 
 external_bins:
   - name: "obsidian"
