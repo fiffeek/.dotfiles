@@ -1,18 +1,20 @@
 # .dotfiles
+
 Personal dotfiles managed by Ansible.
 
 I use Ubuntu. [Ansible](https://github.com/ansible/ansible) is leveraged to make this set up easier
 on multiple machines. In the future this might be changed to [nix](https://github.com/NixOS/nix) instead.
-This set up is very specific to my needs, I encourage the reader to use it 
-as a reference, rather than use directly. This config is not static, and 
+This set up is very specific to my needs, I encourage the reader to use it
+as a reference, rather than use directly. This config is not static, and
 does change over time.
 
-## Terminal driven development 
+## Terminal driven development
 
 Development is done with the help of the three main components:
+
 - [i3](https://i3wm.org/), with the `win` key as the modifier
-- [tmux](https://github.com/tmux/tmux/wiki), with `alt` as the pane/window navigator prefix, and `ctrl + space` as the full prefix 
-- [neovim](https://neovim.io/), with `ctrl` as the window navigation prefix, and `space` as the leader  
+- [tmux](https://github.com/tmux/tmux/wiki), with `alt` as the pane/window navigator prefix, and `ctrl + space` as the full prefix
+- [neovim](https://neovim.io/), with `ctrl` as the window navigation prefix, and `space` as the leader
 
 ## Keyboard
 
@@ -22,7 +24,6 @@ I recommend looking into [home row modifiers](https://precondition.github.io/hom
 
 ## Preview
 
-Here's a preview what the desktop environment looks like:
+Here's a preview what the environment looks like:
 
 ![preview](./resources/preview.png)
-
