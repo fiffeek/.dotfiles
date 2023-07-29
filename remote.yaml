@@ -5,9 +5,6 @@
     - role: bin
       tags:
         - bin
-    - role: compile
-      tags:
-        - compile
     - role: zsh
       tags:
         - zsh

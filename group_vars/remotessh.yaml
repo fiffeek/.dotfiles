@@ -62,5 +62,5 @@ external_bins:
       - --strip-components=1
 
 has_root_access: false
-zsh_location: "~/.bin/bin/zsh"
-attach_to_profile: true
+zsh_location: "/bin/zsh"
+attach_to_profile: false
