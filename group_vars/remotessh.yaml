@@ -31,6 +31,11 @@ asdf:
       version: "16.20.0"
 
 external_bins:
+  - name: "zoxide"
+    source: "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.1/zoxide-0.9.1-x86_64-unknown-linux-musl.tar.gz"
+    location: "zoxide"
+    type: "archive"
+    extra_opts: []
   - name: "fd"
     source: "https://github.com/sharkdp/fd/releases/download/v8.7.0/fd-v8.7.0-x86_64-unknown-linux-musl.tar.gz"
     location: "fd-v8.7.0-x86_64-unknown-linux-musl/fd"
