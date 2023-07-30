@@ -126,7 +126,6 @@ source $ZSH/oh-my-zsh.sh
 bindkey '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 
 # Tmux
-export TERM=xterm-256color
 export EDITOR='nvim'
 
 # EXA aliases
@@ -148,9 +147,6 @@ alias tree='exa --tree'
 alias bon="rfkill block bluetooth && rfkill unblock bluetooth && bluetoothctl power on"
 alias boff="bluetoothctl power off"
 
-# SSH
-# https://news.ycombinator.com/item?id=27075659
-alias ssh="TERM=xterm-256color ssh"
 
 # VIM == NVIM
 alias vim=nvim
