@@ -37,6 +37,8 @@ shell:
   program: /bin/zsh
   args:
     - -l
+    - -c
+    - tmux
 
 # Font configuration (changes require restart)
 font:
