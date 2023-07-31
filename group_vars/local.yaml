@@ -87,6 +87,7 @@ system:
   language: "en_US.UTF-8"
 
 dotfiles:
+  shellthings: "~/.config/shellthings"
   ssh: "~/.ssh"
   btop: "~/.config/btop"
   spicetify:

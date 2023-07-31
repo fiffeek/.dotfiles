@@ -200,3 +200,8 @@ esac
 
 # zoxide
 eval "$(zoxide init zsh)"
+
+if [[ $(hostname) =~ .*radix.* ]]; then
+  [[ ! -f ~/.config/shellthings/radix.zsh.vault ]] || source ~/.config/shellthings/radix.zsh.vault
+fi
+

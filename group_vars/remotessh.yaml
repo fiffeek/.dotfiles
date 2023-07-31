@@ -3,6 +3,7 @@ dotfiles:
   home: "~/"
   tmux: "~/.config/tmux"
   nvim: "~/.config/nvim"
+  shellthings: "~/.config/shellthings"
   oh_my_zsh:
     plugins_dest: "custom/plugins"
     themes_dest: "themes"

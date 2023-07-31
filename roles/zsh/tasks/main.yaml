@@ -66,3 +66,14 @@
       export SHELL={{ zsh_location }}
       exec {{ zsh_location }} -l
   when: not has_root_access and attach_to_profile
+
+- name: zsh | Create shellthings dir
+  ansible.builtin.file:
+    path: "{{ dotfiles.shellthings }}"
+    state: directory
+    mode: "0755"
+
+- name: work | Copy work configs
+  ansible.builtin.copy:
+    src: "{{ role_path }}/files/work/"
+    dest: "{{ dotfiles.shellthings }}"
