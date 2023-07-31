@@ -76,7 +76,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 export FZF_PREVIEW_WINDOW='right:50%:nohidden'
 
 # Lesspipe
-eval "$(lesspipe)" || (which lesspipe.sh && export LESSOPEN="|lesspipe.sh %s")
+(which lesspipe 1>/dev/null 2>&1 && eval "$(lesspipe)") || (which lesspipe.sh 1>/dev/null 2>&1 && export LESSOPEN="|lesspipe.sh %s")
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
