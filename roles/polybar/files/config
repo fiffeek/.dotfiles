@@ -35,7 +35,7 @@ font-1 = "Symbols Nerd Font Mono:style=Regular:size=9;2"
 
 modules-left = i3
 modules-center = title
-modules-right = pulseaudio battery cpu memory disk date time bluetooth
+modules-right = pulseaudio battery cpu memory disk date time bluetooth vpn-mullvad-status
 
 
 cursor-click = pointer
@@ -220,3 +220,11 @@ click-left = exec blueman-manager
 click-right = exec ~/.config/polybar/scripts/bluetooth.sh --toggle &
 format-background = ${colors.background}
 format-foreground = ${colors.foreground}
+
+[module/vpn-mullvad-status]
+type = custom/script
+exec = ~/.config/polybar/scripts/mullvad.sh --status
+click-left = ~/.config/polybar/scripts/mullvad.sh --connect
+click-right = ~/.config/polybar/scripts/mullvad.sh --reconnect
+interval = 30
+
