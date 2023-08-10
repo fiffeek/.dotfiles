@@ -11,6 +11,12 @@ crtc 1
 mode 3840x2160
 pos 0x0
 rate 30.00
+output DisplayPort-4
+crtc 2
+mode 2560x1440
+pos 3840x0
+rate 59.95
+rotate left
 output eDP
 crtc 0
 mode 2160x1440
