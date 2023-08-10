@@ -71,3 +71,6 @@ external_bins:
 has_root_access: false
 zsh_location: "/bin/zsh"
 attach_to_profile: false
+
+nvim:
+  dist: "work"

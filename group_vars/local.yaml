@@ -263,3 +263,6 @@ spicetify:
   source: "https://github.com/spicetify/spicetify-cli/releases/download/v2.20.0/spicetify-2.20.0-linux-amd64.tar.gz"
   themes:
     source: "https://github.com/spicetify/spicetify-themes"
+
+nvim:
+  dist: "default"

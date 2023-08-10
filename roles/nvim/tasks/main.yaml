@@ -6,7 +6,7 @@
 
 - name: nvim | Link config
   ansible.builtin.file:
-    src: "{{ role_path }}/files"
+    src: "{{ role_path }}/files/{{ nvim.dist }}"
     dest: "{{ dotfiles.nvim }}"
     state: link
     force: true
