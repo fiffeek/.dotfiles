@@ -4,14 +4,12 @@ output DisplayPort-1
 off
 output DisplayPort-2
 off
-output DisplayPort-3
-off
 output HDMI-A-0
 crtc 1
 mode 3840x2160
 pos 0x0
 rate 30.00
-output DisplayPort-4
+output DisplayPort-3
 crtc 2
 mode 2560x1440
 pos 3840x0
@@ -20,6 +18,6 @@ rotate left
 output eDP
 crtc 0
 mode 2160x1440
-pos 750x2160
+pos 1680x2160
 primary
 rate 60.00
