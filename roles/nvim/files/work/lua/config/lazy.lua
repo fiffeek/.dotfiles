@@ -13,7 +13,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.dap" },
     { import = "lazyvim.plugins.extras.test" },
     { import = "lazyvim.plugins.extras.util.project" },
-    { import = "lazyvim.plugins.extras.lang.clangd" },
     -- import/override with your plugins
     { import = "plugins" },
     { import = "plugins.lang" },
