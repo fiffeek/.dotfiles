@@ -17,4 +17,18 @@ return {
     },
     opts = {},
   },
+  -- Structural Search Replace
+  {
+    "cshuaimin/ssr.nvim",
+    keys = {
+      {
+        "<leader>rR",
+        function()
+          require("ssr").open()
+        end,
+        mode = { "n", "x" },
+        desc = "Structural Replace",
+      },
+    },
+  },
 }
