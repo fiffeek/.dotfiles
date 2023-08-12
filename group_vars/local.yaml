@@ -153,6 +153,8 @@ asdf:
       repository: "https://github.com/luizm/asdf-shellcheck.git"
     - name: "shfmt"
       repository: "https://github.com/luizm/asdf-shfmt.git"
+    - name: "kustomize"
+      repository: "https://github.com/Banno/asdf-kustomize.git"
     - name: "terraform"
       repository: "https://github.com/asdf-community/asdf-hashicorp.git"
     - name: "terragrunt"
@@ -214,6 +216,8 @@ asdf:
       version: "latest"
     - name: "ansible"
       version: "8.1.0"
+    - name: "kustomize"
+      version: "5.1.1"
   globals:
     - name: "python"
       version: "3.9.0"
@@ -247,6 +251,8 @@ asdf:
       version: "latest"
     - name: "ansible"
       version: "8.1.0"
+    - name: "kustomize"
+      version: "5.1.1"
 
 external_bins:
   - name: "obsidian"
