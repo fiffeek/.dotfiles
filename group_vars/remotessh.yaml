@@ -19,6 +19,10 @@ asdf:
       repository: "https://github.com/asdf-vm/asdf-nodejs.git"
     - name: "k9s"
       repository: "https://github.com/looztra/asdf-k9s"
+    - name: "helm"
+      repository: "https://github.com/Antiarchitect/asdf-helm.git"
+    - name: "kustomize"
+      repository: "https://github.com/Banno/asdf-kustomize.git"
   installs:
     - name: "neovim"
       version: "0.9.1"
@@ -28,6 +32,10 @@ asdf:
       version: "16.20.0"
     - name: "k9s"
       version: "0.27.4"
+    - name: "helm"
+      version: "3.12.3"
+    - name: "kustomize"
+      version: "5.1.1"
   globals:
     - name: "neovim"
       version: "0.9.1"
@@ -37,6 +45,10 @@ asdf:
       version: "16.20.0"
     - name: "k9s"
       version: "0.27.4"
+    - name: "helm"
+      version: "3.12.3"
+    - name: "kustomize"
+      version: "5.1.1"
 
 external_bins:
   - name: "zoxide"
