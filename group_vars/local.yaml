@@ -61,6 +61,9 @@ apt_packages:
   - exiftool
   # Player control
   - playerctl
+  # ssh
+  - mosh
+  - texlive-full
 
 vscode:
   apt_deps:
