@@ -22,3 +22,8 @@
     dest: "{{ (dotfiles.home, '.bin', item.name) | path_join }}"
     mode: "755"
   loop: "{{ external_bins | selectattr('type', 'equalto', 'loose') }}"
+
+- name: Copy scripts
+  ansible.builtin.synchronize:
+    src: "{{ role_path }}/files/"
+    dest: "{{ (dotfiles.home, '.bin') | path_join }}"
