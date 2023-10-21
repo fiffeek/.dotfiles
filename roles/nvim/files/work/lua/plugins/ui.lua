@@ -9,6 +9,11 @@ return {
         end,
         desc = "Delete all Notifications",
       },
-    }
+    },
+    opts = {
+      level = 4,
+      render = "minimal",
+      stages = "static",
+    },
   }
 }
