@@ -2,7 +2,7 @@ local Util = require("lazyvim.util")
 return {
   {
     "nvim-telescope/telescope-fzf-native.nvim",
-    build = "make",
+    build = "make CC=~/nvim-hacks/gcc",
     enabled = vim.fn.executable("make") == 1,
     config = function()
       Util.on_load("telescope.nvim", function()
