@@ -25,7 +25,9 @@ asdf:
       repository: "https://github.com/Banno/asdf-kustomize.git"
   installs:
     - name: "neovim"
-      version: "0.9.1"
+      version: "0.9.4"
+    - name: "neovim"
+      version: "nightly"
     - name: "lazygit"
       version: "latest"
     - name: "nodejs"
@@ -38,7 +40,7 @@ asdf:
       version: "5.1.1"
   globals:
     - name: "neovim"
-      version: "0.9.1"
+      version: "0.9.4"
     - name: "lazygit"
       version: "latest"
     - name: "nodejs"
