@@ -27,7 +27,7 @@ asdf:
       repository: "https://github.com/Banno/asdf-kustomize.git"
   installs:
     - name: "golang"
-      version: "1.16.5"
+      version: "1.18"
     - name: "neovim"
       version: "0.9.4"
     - name: "neovim"
@@ -44,7 +44,7 @@ asdf:
       version: "5.1.1"
   globals:
     - name: "golang"
-      version: "1.16.5"
+      version: "1.18"
     - name: "neovim"
       version: "0.9.4"
     - name: "lazygit"
