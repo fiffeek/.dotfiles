@@ -11,6 +11,8 @@ dotfiles:
 asdf:
   extra_env: ""
   plugins:
+    - name: "golang"
+      repository: "https://github.com/kennyp/asdf-golang.git"
     - name: "neovim"
       repository: "https://github.com/richin13/asdf-neovim.git"
     - name: "lazygit"
@@ -24,6 +26,8 @@ asdf:
     - name: "kustomize"
       repository: "https://github.com/Banno/asdf-kustomize.git"
   installs:
+    - name: "golang"
+      version: "1.16.5"
     - name: "neovim"
       version: "0.9.4"
     - name: "neovim"
@@ -39,6 +43,8 @@ asdf:
     - name: "kustomize"
       version: "5.1.1"
   globals:
+    - name: "golang"
+      version: "1.16.5"
     - name: "neovim"
       version: "0.9.4"
     - name: "lazygit"
