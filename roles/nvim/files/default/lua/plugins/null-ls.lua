@@ -1,5 +1,5 @@
 return {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   opts = function()
     local nls = require("null-ls")
     return {
@@ -7,12 +7,7 @@ return {
       sources = {
         nls.builtins.formatting.stylua,
         nls.builtins.formatting.shfmt,
-        nls.builtins.formatting.black,
-        nls.builtins.formatting.isort,
         nls.builtins.code_actions.shellcheck,
-        nls.builtins.diagnostics.terraform_validate,
-        nls.builtins.formatting.prettierd,
-        nls.builtins.formatting.terraform_fmt,
         nls.builtins.formatting.clang_format,
       },
     }
