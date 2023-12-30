@@ -12,6 +12,7 @@ return {
   },
   {
     "nvim-telescope/telescope.nvim",
+    enabled = false,
     opts = {
       defaults = {
         file_ignore_patterns = {
@@ -32,9 +33,9 @@ return {
           fuzzy = true,
           override_generic_sorter = true,
           override_file_sorter = true,
-          case_mode = 'smart_case',
+          case_mode = "smart_case",
         },
       },
-    }
-  }
+    },
+  },
 }
