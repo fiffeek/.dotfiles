@@ -12,6 +12,8 @@ return {
   },
   {
     "nvim-telescope/telescope.nvim",
+    keys = {},
+    enabled = false,
     opts = {
       defaults = {
         file_ignore_patterns = {
