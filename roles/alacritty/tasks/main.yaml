@@ -28,7 +28,7 @@
 
 - name: alacritty | Link config
   ansible.builtin.file:
-    src: "{{ role_path }}/files/alacritty.yml"
-    dest: "{{ (dotfiles.alacritty, 'alacritty.yml') | path_join }}"
+    src: "{{ role_path }}/files/alacritty.toml"
+    dest: "{{ (dotfiles.alacritty, 'alacritty.toml') | path_join }}"
     state: link
     force: true
