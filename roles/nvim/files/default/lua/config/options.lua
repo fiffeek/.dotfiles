@@ -4,7 +4,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.o.cmdheight = 0
+vim.o.cmdheight = 2
 vim.o.showcmdloc = "statusline"
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 vim.opt.swapfile = false
@@ -15,3 +15,5 @@ vim.opt.foldlevelstart = 99
 vim.opt.foldnestmax = 10 -- deepest fold is 10 levels
 vim.opt.foldenable = false -- don't fold by default
 vim.opt.foldlevel = 1
+
+vim.opt.showmode = false
