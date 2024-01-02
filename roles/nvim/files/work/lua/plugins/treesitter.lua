@@ -33,5 +33,9 @@ return {
         "json5",
       })
     end
+    opts.indent = {
+      enable = true,
+      disable = { "python" },
+    }
   end,
 }
