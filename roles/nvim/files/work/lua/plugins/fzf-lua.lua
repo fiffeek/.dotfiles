@@ -3,9 +3,8 @@ return {
     "ibhagwan/fzf-lua",
     enabled = true,
     cmd = { "FzfLua" },
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-    },
+    lazy = false,
+    priority = 40,
     keys = {
       { "<leader><space>", [[<cmd>FzfLua git_files<cr>]], desc = "FzfLua Git Files" },
       {
