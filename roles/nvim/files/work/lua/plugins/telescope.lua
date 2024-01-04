@@ -12,7 +12,8 @@ return {
   },
   {
     "nvim-telescope/telescope.nvim",
-    enabled = false,
+    enabled = true,
+    lazy = false,
     opts = {
       defaults = {
         file_ignore_patterns = {

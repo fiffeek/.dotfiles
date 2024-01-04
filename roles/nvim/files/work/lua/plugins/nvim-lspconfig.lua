@@ -38,6 +38,7 @@ return {
         },
       },
       pylsp = {
+        enable = false,
         settings = {
           pylsp = {
             builtin = {
