@@ -275,3 +275,4 @@ assign [class="Slack"] $ws1
 assign [class="Alacritty"] $ws3
 assign [class="obsidian"] $ws2
 assign [class="Spotify"] $ws10
+for_window [class="firefox|Slack|Alacritty|obsidian|Spotify"] focus
