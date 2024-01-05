@@ -274,3 +274,4 @@ assign [class="firefox"] $ws4
 assign [class="Slack"] $ws1
 assign [class="Alacritty"] $ws3
 assign [class="obsidian"] $ws2
+assign [class="Spotify"] $ws10
