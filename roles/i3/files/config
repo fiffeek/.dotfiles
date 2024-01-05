@@ -268,3 +268,9 @@ bindsym $mod+c exec arandr
 # Browser
 bindsym $mod+Shift+Return exec firefox 
 bindsym $mod+Shift+g exec google-chrome --password-store=gnome
+
+# class assignments
+assign [class="firefox"] $ws4
+assign [class="Slack"] $ws1
+assign [class="Alacritty"] $ws3
+assign [class="obsidian"] $ws2

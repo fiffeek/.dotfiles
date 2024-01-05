@@ -3,6 +3,8 @@ return {
     "ibhagwan/fzf-lua",
     enabled = true,
     cmd = { "FzfLua" },
+    lazy = false,
+    priority = 40,
     keys = {
       { "<leader><space>", [[<cmd>FzfLua git_files<cr>]], desc = "FzfLua Git Files" },
       {
@@ -156,12 +158,6 @@ return {
         vim.fn.setreg("@", save)
         require("fzf-lua").grep({ search = word })
       end
-      map(
-        "n",
-        "<leader>dg",
-        "<Esc><cmd>set operatorfunc=v:lua.__grep_string_operator<CR>g@",
-        { desc = "FzfLua grep operator" }
-      )
 
       local rg_param_args = {
         "-t",
