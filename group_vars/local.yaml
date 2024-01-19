@@ -64,6 +64,7 @@ apt_packages:
   # ssh
   - mosh
   - texlive-full
+  - kitty-terminfo
 
 vscode:
   apt_deps:
@@ -106,6 +107,7 @@ dotfiles:
   picom: "~/.config/picom"
   tlp: "/etc/"
   alacritty: "~/.config/alacritty"
+  kitty: "~/.config/kitty"
   nvim: "~/.config/nvim"
   # Xorg requires root
   x11: "/etc/X11/xorg.conf.d/"
