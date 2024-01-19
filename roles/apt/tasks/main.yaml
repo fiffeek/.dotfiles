@@ -1,4 +1,9 @@
 ---
+- name: Install packages via ansible.builtin.apt
+  ansible.builtin.apt:
+    name: "{{ apt_packages }}"
+  become: true
+
 - name: i3 | Download package
   shell: >
     /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2023.02.18_all.deb /tmp/keyring.deb SHA256:a511ac5f10cd811f8a4ca44d665f2fa1add7a9f09bef238cdfad8461f5239cc4
@@ -17,11 +22,6 @@
     update_cache: true
     pkg: i3
     state: latest
-  become: true
-
-- name: Install packages via ansible.builtin.apt
-  ansible.builtin.apt:
-    name: "{{ apt_packages }}"
   become: true
 
 - name: vscode | Install dependencies
