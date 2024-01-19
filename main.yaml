@@ -41,6 +41,11 @@
     - role: alacritty
       tags:
         - alacritty
+        - terminal
+    - role: kitty
+      tags:
+        - kitty
+        - terminal
     - role: i3
       tags:
         - i3

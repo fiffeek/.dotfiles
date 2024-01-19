@@ -1,0 +1,43 @@
+---
+- name: kitty | Check if kitty installed
+  shell: command -v kitty
+  args:
+    executable: /bin/zsh
+  register: kitty_exists
+  ignore_errors: true
+
+- name: kitty | Link kitty exec
+  ansible.builtin.file:
+    src: "{{ (dotfiles.home, '.local', 'kitty.app', 'bin', 'kitty') | path_join }}"
+    dest: "{{ (dotfiles.home, '.bin', 'kitty') | path_join }}"
+    state: link
+    force: true
+  when: kitty_exists is failed
+
+- name: kitty | Link kitten exec
+  ansible.builtin.file:
+    src: "{{ (dotfiles.home, '.local', 'kitty.app', 'bin', 'kitten') | path_join }}"
+    dest: "{{ (dotfiles.home, '.bin', 'kitten') | path_join }}"
+    state: link
+    force: true
+  when: kitty_exists is failed
+
+- name: kitty | Install
+  ansible.builtin.shell: "curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin"
+  args:
+    chdir: "{{ ansible_user_dir }}"
+    executable: /bin/zsh
+  when: kitty_exists is failed
+
+- name: kitty | Create config dir
+  ansible.builtin.file:
+    path: "{{ dotfiles.kitty }}"
+    state: directory
+    mode: "0755"
+
+- name: kitty | Link config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/kitty.conf"
+    dest: "{{ (dotfiles.kitty, 'kitty.conf') | path_join }}"
+    state: link
+    force: true
