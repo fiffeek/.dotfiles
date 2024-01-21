@@ -272,7 +272,7 @@ bindsym $mod+Shift+g exec google-chrome --password-store=gnome
 # class assignments
 assign [class="firefox"] $ws4
 assign [class="Slack"] $ws1
-assign [class="Alacritty"] $ws3
+assign [class="kitty"] $ws3
 assign [class="obsidian"] $ws2
 assign [class="Spotify"] $ws10
-for_window [class="firefox|Slack|Alacritty|obsidian|Spotify"] focus
+for_window [class="firefox|Slack|kitty|obsidian|Spotify"] focus
