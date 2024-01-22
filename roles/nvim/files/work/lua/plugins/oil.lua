@@ -19,6 +19,11 @@ return {
         end,
         desc = "Explorer Oil",
       },
+      {
+        "-",
+        "<CMD>Oil<CR>",
+        desc = "Open parent dir",
+      }
     },
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
