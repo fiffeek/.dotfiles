@@ -13,6 +13,11 @@ return {
     },
     keys = {
       {
+        "-",
+        "<CMD>Oil<CR>",
+        desc = "Open parent dir",
+      },
+      {
         "<leader>fe",
         function()
           require("oil").open()
