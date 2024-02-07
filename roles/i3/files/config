@@ -73,7 +73,7 @@ bindsym Ctrl+Shift+Print exec "flameshot gui"
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec ~/.bin/kitty -e tmux
+bindsym $mod+Return exec ~/.bin/kitty 
 
 # kill focused window
 bindsym $mod+Shift+q kill
