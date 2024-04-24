@@ -88,7 +88,6 @@ plugins=(
   asdf
   tmux
   zsh-syntax-highlighting
-  zsh-autocomplete
   sudo
   copyfile
   fd
