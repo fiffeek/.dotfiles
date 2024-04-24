@@ -9,11 +9,11 @@
     cmd: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
   when: not omz_installed.stat.exists
 
-- name: zsh | Clone zsh-autocomplete
+- name: zsh | Clone fzf-tab
   ansible.builtin.git:
-    repo: "https://github.com/marlonrichert/zsh-autocomplete.git"
-    dest: "{{ (dotfiles.home, '.oh-my-zsh', dotfiles.oh_my_zsh.plugins_dest, 'zsh-autocomplete') | path_join }}"
-    version: "main"
+    repo: "https://github.com/Aloxaf/fzf-tab"
+    dest: "{{ (dotfiles.home, '.oh-my-zsh', dotfiles.oh_my_zsh.plugins_dest, 'fzf-tab') | path_join }}"
+    version: "master"
     update: false
 
 - name: zsh | Clone zsh-syntax-highlighting

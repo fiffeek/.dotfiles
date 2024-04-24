@@ -78,6 +78,20 @@ export FZF_PREVIEW_WINDOW='right:50%:nohidden'
 # Lesspipe
 (which lesspipe 1>/dev/null 2>&1 && eval "$(lesspipe)") || (which lesspipe.sh 1>/dev/null 2>&1 && export LESSOPEN="|lesspipe.sh %s")
 
+# fzf configure
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
+# use input as query string when completing zlua
+zstyle ':fzf-tab:complete:_zlua:*' query-string input
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -93,6 +107,7 @@ plugins=(
   fd
   ripgrep
   fzf-zsh-plugin
+  fzf-tab
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -204,3 +219,4 @@ if [[ $(hostname) =~ .*radix.* ]]; then
   [[ ! -f ~/.config/shellthings/radix.zsh.vault ]] || source ~/.config/shellthings/radix.zsh.vault
 fi
 
+typeset -f enable-fzf-tab >/dev/null && enable-fzf-tab
