@@ -27,7 +27,7 @@
 
 - name: fonts | Download icons
   ansible.builtin.unarchive:
-    src: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/NerdFontsSymbolsOnly.zip
+    src: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/NerdFontsSymbolsOnly.zip
     dest: "{{ lookup('env', 'HOME') }}/.fonts"
     remote_src: true
   when: icons_exists is failed
