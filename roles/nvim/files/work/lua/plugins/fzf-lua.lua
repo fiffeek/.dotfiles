@@ -29,6 +29,7 @@ return {
       },
 
       { "<leader>fb", [[<cmd>FzfLua buffers<cr>]], desc = "FzfLua buffers" },
+      { "<leader>gc", [[<cmd>FzfLua git_commits<cr>]], desc = "FzfLua commits" },
       { "<leader>,", [[<cmd>FzfLua buffers<cr>]], desc = "FzfLua buffers" },
       { "<leader>;", [[<cmd>FzfLua<cr>]], desc = "FzfLua" },
       { "<leader>fp", [[<cmd>FzfLua resume<cr>]], desc = "FzfLua resume" },
@@ -58,14 +59,16 @@ return {
         [[<cmd>FzfLua search_history<cr>]],
         desc = "FzfLua history search",
       },
+      { "<leader>f/", "<cmd>FzfLua live_grep<cr>", desc = "Grep" },
       {
-        "<leader>f/",
+        "<leader>/",
         function()
-          require("fzf-lua").grep({ input_prompt = "Search " .. vim.fn.getcwd() .. ": " })
+          require("fzf-lua").live_grep({
+            cwd = vim.g.project_path or vim.loop.cwd(),
+          })
         end,
-        desc = "FzfLua search string literal (cwd)",
+        desc = "FzfLua current folder (with hidden)",
       },
-      { "<leader>/", "<cmd>FzfLua live_grep<cr>", desc = "Grep" },
       {
         "<leader>?",
         function()
