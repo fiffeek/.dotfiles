@@ -220,3 +220,8 @@ if [[ $(hostname) =~ .*radix.* ]]; then
 fi
 
 typeset -f enable-fzf-tab >/dev/null && enable-fzf-tab
+
+function headphones() {
+  bon
+  bluetoothctl connect 14:3F:A6:6D:8A:F9
+}
