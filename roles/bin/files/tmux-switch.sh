@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
-
 REPOS="$HOME/repos"
 export TMUX_FZF_OPTIONS="-p -w 62% -h 38% -m"
 
@@ -18,6 +16,10 @@ else
 	options=($(printf "%s\n" "${options[@]}" | sort -u))
 	# https://github.com/junegunn/fzf/issues/1693
 	selected=$(printf "%s\n" "${options[@]}" | fzf-tmux --bind=enter:replace-query+print-query $TMUX_FZF_OPTIONS --preview-window=hidden)
+fi
+
+if [ -z $selected ]; then
+	exit 0
 fi
 
 session_name=$(basename ${selected})
