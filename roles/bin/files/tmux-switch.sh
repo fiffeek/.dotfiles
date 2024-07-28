@@ -15,7 +15,7 @@ else
 	options=($current_sessions "${repos[@]}")
 	options=($(printf "%s\n" "${options[@]}" | sort -u))
 	# https://github.com/junegunn/fzf/issues/1693
-	selected=$(printf "%s\n" "${options[@]}" | fzf-tmux --bind=enter:replace-query+print-query $TMUX_FZF_OPTIONS --preview-window=hidden)
+	selected=$(printf "%s\n" "${options[@]}" | fzf-tmux --bind=enter:replace-query+print-query $TMUX_FZF_OPTIONS --preview="tmux capture-pane -ep -t {}")
 fi
 
 if [ -z $selected ]; then
