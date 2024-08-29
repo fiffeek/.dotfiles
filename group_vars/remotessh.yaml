@@ -33,6 +33,8 @@ asdf:
     - name: "neovim"
       version: "0.9.4"
     - name: "neovim"
+      version: "0.10.0"
+    - name: "neovim"
       version: "nightly"
     - name: "lazygit"
       version: "latest"
