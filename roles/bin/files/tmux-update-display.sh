@@ -12,11 +12,10 @@
 # This is performed by using tmux send-keys to the shell.
 # This script handles updating $DISPLAY within vim also
 
-NEW_DISPLAY=$DISPLAY
-# NEW_DISPLAY=$(tmux show-env | sed -n 's/^DISPLAY=//p')
+NEW_DISPLAY=$(tmux show-env | sed -n 's/^DISPLAY=//p')
 
 # Update $DISPLAY in bash, zsh and vim/nvim
-tmux list-panes -s -F "#{session_name}:#{window_index}.#{pane_index} #{pane_current_command}" |
+tmux list-panes -s -F -a "#{session_name}:#{window_index}.#{pane_index} #{pane_current_command}" |
 	while read pane_process; do
 		IFS=' ' read -ra pane_process <<<"$pane_process"
 		if [[ "${pane_process[1]}" == "zsh" || "${pane_process[1]}" == "bash" ]]; then
