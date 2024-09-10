@@ -276,3 +276,10 @@ assign [class="kitty"] $ws3
 assign [class="obsidian"] $ws2
 assign [class="Spotify"] $ws10
 for_window [class="firefox|Slack|kitty|obsidian|Spotify"] focus
+
+# Start up env
+bindsym $mod+O exec tmux new-session -s "obsidian" "/bin/bash -c sleep 2600"
+exec ~/.bin/kitty --single-instance
+
+
+
