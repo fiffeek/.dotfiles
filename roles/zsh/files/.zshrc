@@ -244,3 +244,5 @@ if [ -f "/home/fmikina/miniforge3/etc/profile.d/mamba.sh" ]; then
 fi
 # <<< conda initialize <<<
 
+
+unsetopt BEEP

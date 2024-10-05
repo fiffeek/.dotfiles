@@ -65,13 +65,12 @@ apt_packages:
   - mosh
   - texlive-full
   - kitty-terminfo
+  - libfuse2
 
 vscode:
   apt_deps:
     - ca-certificates
     - apt-transport-https
-    - gconf2
-    - libasound2
     - libgtk2.0-0
     - libxss1
     - libxcb-dri3-0
@@ -203,6 +202,8 @@ asdf:
       version: "latest:2"
     - name: "neovim"
       version: "0.9.4"
+    - name: "neovim"
+      version: "0.10.2"
     - name: "fd"
       version: "latest"
     - name: "bat"
@@ -219,8 +220,6 @@ asdf:
       version: "latest"
     - name: "zoxide"
       version: "latest"
-    - name: "ansible"
-      version: "8.1.0"
     - name: "kustomize"
       version: "5.1.1"
   globals:
@@ -237,7 +236,7 @@ asdf:
     - name: "awscli"
       version: "latest:2"
     - name: "neovim"
-      version: "0.9.4"
+      version: "0.10.2"
     - name: "fd"
       version: "latest"
     - name: "bat"
@@ -254,8 +253,6 @@ asdf:
       version: "latest"
     - name: "zoxide"
       version: "latest"
-    - name: "ansible"
-      version: "8.1.0"
     - name: "kustomize"
       version: "5.1.1"
 

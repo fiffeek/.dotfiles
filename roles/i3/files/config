@@ -1,6 +1,7 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
+exec "xrandr --dpi 144"
 
 set $mod Mod4
 
@@ -79,7 +80,7 @@ bindsym $mod+Return exec ~/.bin/kitty --single-instance
 bindsym $mod+Shift+q kill
 
 # rofi:
-bindsym $mod+space exec --no-startup-id rofi -show run -theme ~/.config/rofi/standard.rasi
+bindsym $mod+space exec --no-startup-id rofi -dpi 144 -show run -theme ~/.config/rofi/standard.rasi
 bindsym $mod+Shift+p exec --no-startup-id ~/.config/rofi/powermenu.sh
 
 # change focus

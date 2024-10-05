@@ -1,5 +1,5 @@
 [global]
-font = JetBrains Mono 8
+font = JetBrainsMono Nerd Font Mono 8
 icon_theme = "Papirus-Dark"
 enable_recursive_icon_lookup = true
 geometry = "300x10-20+50"

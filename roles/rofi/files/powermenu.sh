@@ -16,6 +16,7 @@ no='No'
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
+    -dpi 144 \
 		-p "$host" \
 		-mesg "Uptime: $uptime" \
 		-theme ~/.config/rofi/powermenu.rasi

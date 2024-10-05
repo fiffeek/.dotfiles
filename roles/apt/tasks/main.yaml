@@ -6,7 +6,7 @@
 
 - name: i3 | Download package
   shell: >
-    /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2023.02.18_all.deb /tmp/keyring.deb SHA256:a511ac5f10cd811f8a4ca44d665f2fa1add7a9f09bef238cdfad8461f5239cc4
+    /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb /tmp/keyring.deb SHA256:f9bb4340b5ce0ded29b7e014ee9ce788006e9bbfe31e96c09b2118ab91fca734
   changed_when: false
 
 - name: i3 | Install keyring.deb
@@ -86,7 +86,7 @@
 - name: spotify | Add apt key
   become: true
   apt_key:
-    url: "https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg"
+    url: "https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg"
     state: present
 
 - name: spotify | Add spotify repository
@@ -99,5 +99,24 @@
   become: true
   ansible.builtin.apt:
     name: "spotify-client"
+    state: "present"
+    update_cache: yes
+
+- name: mullvad | Add apt key
+  become: true
+  apt_key:
+    url: "https://repository.mullvad.net/deb/mullvad-keyring.asc"
+    state: present
+
+- name: mullvad | Add repository
+  become: true
+  apt_repository:
+    repo: deb https://repository.mullvad.net/deb/stable noble main
+    state: present
+
+- name: mullvad | Install
+  become: true
+  ansible.builtin.apt:
+    name: "mullvad-vpn"
     state: "present"
     update_cache: yes
