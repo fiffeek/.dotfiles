@@ -66,6 +66,8 @@ apt_packages:
   - texlive-full
   - kitty-terminfo
   - libfuse2
+  - pulseaudio-utils
+  - pavucontrol
 
 vscode:
   apt_deps:
