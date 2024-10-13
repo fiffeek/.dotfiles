@@ -14,11 +14,13 @@ output DisplayPort-6
 off
 output DisplayPort-7
 off
+output DisplayPort-9
+off
 output DisplayPort-8
 off
-output DisplayPort-10
+output DisplayPort-11
 off
-output DisplayPort-9
+output DisplayPort-10
 crtc 1
 mode 2560x2880
 pos 0x0
@@ -35,7 +37,7 @@ x-prop-underscan_vborder 0
 output eDP
 crtc 0
 mode 2880x1920
-pos 2988x893
+pos 2976x823
 primary
 rate 120.00
 x-prop-colorspace Default
