@@ -68,6 +68,7 @@ apt_packages:
   - libfuse2
   - pulseaudio-utils
   - pavucontrol
+  - power-profiles-daemon
 
 vscode:
   apt_deps:
