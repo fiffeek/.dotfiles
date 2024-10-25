@@ -13,6 +13,14 @@
     force: true
   become: true
 
+- name: x11 | Link amdgpu config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/20-amdgpu.conf"
+    dest: "{{ (dotfiles.x11, '20-amdgpu.conf') | path_join }}"
+    state: link
+    force: true
+  become: true
+
 - name: x11 | Link Xresources config
   ansible.builtin.file:
     src: "{{ role_path }}/files/.Xresources"
