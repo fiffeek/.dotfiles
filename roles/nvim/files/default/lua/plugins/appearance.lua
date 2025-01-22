@@ -17,4 +17,10 @@ return {
       colorscheme = "kanagawa",
     },
   },
+  {
+    "snacks.nvim",
+    opts = {
+      scroll = { enabled = false },
+    },
+  },
 }
