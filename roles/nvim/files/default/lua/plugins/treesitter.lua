@@ -19,7 +19,6 @@ return {
         "http",
         "javascript",
         "json",
-        "latex",
         "lua",
         "luadoc",
         "make",
