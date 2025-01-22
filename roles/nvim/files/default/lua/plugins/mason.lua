@@ -9,6 +9,7 @@ return {
       "black",
       "isort",
       "bzl",
+      "clangd",
     },
   },
 }

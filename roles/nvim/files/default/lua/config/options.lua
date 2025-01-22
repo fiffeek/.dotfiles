@@ -17,3 +17,5 @@ vim.opt.foldenable = false -- don't fold by default
 vim.opt.foldlevel = 1
 
 vim.opt.showmode = false
+
+vim.g.lazyvim_picker = "fzf"
