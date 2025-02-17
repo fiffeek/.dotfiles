@@ -282,7 +282,9 @@ assign [class="kitty"] $ws3
 assign [class="obsidian"] $ws2
 assign [class="Spotify"] $ws10
 assign [class="steam"] $ws5
-for_window [class="firefox|Slack|kitty|obsidian|Spotify|steam"] focus
+assign [class="Blueman-manager"] $ws6
+assign [class="Arandr"] $ws6
+for_window [class="firefox|Slack|kitty|obsidian|Spotify|steam|Blueman-manager|Arandr"] focus
 
 # Start up env
 bindsym $mod+O exec tmux new-session -s "obsidian" "/bin/bash -c sleep 2600"
