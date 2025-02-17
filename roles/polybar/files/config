@@ -231,3 +231,7 @@ interval = 30
 
 [module/temperature]
 type = internal/temperature
+format = <ramp> <label>
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
