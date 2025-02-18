@@ -290,5 +290,11 @@ for_window [class="firefox|Slack|kitty|obsidian|Spotify|steam|Blueman-manager|Ar
 bindsym $mod+O exec tmux new-session -s "obsidian" "/bin/bash -c sleep 2600"
 exec ~/.bin/kitty --single-instance
 
-
-
+# Assign workspaces to monitors
+set $monitor_laptop eDP
+set $waw_one DisplayPort-10
+workspace $ws6 output $waw_one $monitor_laptop
+workspace $ws4 output $waw_one $monitor_laptop
+workspace $ws3 output $waw_one $monitor_laptop
+workspace $ws2 output $waw_one $monitor_laptop
+workspace $ws1 output $monitor_laptop
