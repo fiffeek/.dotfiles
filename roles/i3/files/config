@@ -43,6 +43,9 @@ exec --no-startup-id blueman-applet
 # start up polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
+# notepad
+exec_always --no-startup-id ~/.bin/obsidian --no-sandbox &
+
 # Notifications deamon
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
