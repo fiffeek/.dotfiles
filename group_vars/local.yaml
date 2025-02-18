@@ -277,3 +277,12 @@ spicetify:
 
 nvim:
   dist: "default"
+
+pihole:
+  network: pihole
+  repository:
+    name: pihole/pihole
+    tag: 2025.02.0
+  interface: "wlp1s0"
+  ip: "172.3.27.10"
+  persistence_dest: "/etc/pihole/"

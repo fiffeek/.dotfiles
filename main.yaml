@@ -79,3 +79,6 @@
     - role: spicetify
       tags:
         - spicetify
+    - role: pihole
+      tags:
+        - extra
