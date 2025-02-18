@@ -292,9 +292,11 @@ exec ~/.bin/kitty --single-instance
 
 # Assign workspaces to monitors
 set $monitor_laptop eDP
-set $waw_one DisplayPort-10
-workspace $ws6 output $waw_one $monitor_laptop
-workspace $ws4 output $waw_one $monitor_laptop
-workspace $ws3 output $waw_one $monitor_laptop
-workspace $ws2 output $waw_one $monitor_laptop
+set $waw_dp1 DisplayPort-9
+set $waw_dp2 DisplayPort-10
+workspace $ws6 output $waw_dp1 $waw_dp2 $monitor_laptop
+workspace $ws5 output $waw_dp1 $waw_dp2 $monitor_laptop
+workspace $ws4 output $waw_dp1 $waw_dp2 $monitor_laptop
+workspace $ws3 output $waw_dp1 $waw_dp2 $monitor_laptop
+workspace $ws2 output $waw_dp1 $waw_dp2 $monitor_laptop
 workspace $ws1 output $monitor_laptop
