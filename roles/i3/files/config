@@ -46,6 +46,8 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 # notepad
 exec_always --no-startup-id ~/.bin/obsidian --no-sandbox &
 
+exec_always --no-startup-id spotify &
+
 # Notifications deamon
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
@@ -303,3 +305,4 @@ workspace $ws4 output $waw_dp1 $waw_dp2 $monitor_laptop
 workspace $ws3 output $waw_dp1 $waw_dp2 $monitor_laptop
 workspace $ws2 output $waw_dp1 $waw_dp2 $monitor_laptop
 workspace $ws1 output $monitor_laptop
+workspace $ws10 output $monitor_laptop
