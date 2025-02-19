@@ -42,3 +42,21 @@
 - name: set DNS resolution
   command: resolvectl dns {{ pihole.interface }} {{ pihole.ip }}
   become: true
+
+- name: create /etc/systemd/resolved.conf.d directory
+  become: true
+  ansible.builtin.file:
+    path: /etc/systemd/resolved.conf.d
+    state: directory
+    mode: '0755'
+
+- name: add DNS settings resolv.conf
+  become: true
+  ansible.builtin.template:
+    src: templates/dns_servers.conf.j2
+    dest: /etc/systemd/resolved.conf.d/dns_servers.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart service systemd-resolved
+
