@@ -1,0 +1,28 @@
+---
+  - name: find profile directories
+    ansible.builtin.find:
+      paths: "{{ firefox.profiles_search_path }}/"
+      file_type: directory
+      patterns: "*default*"
+      recurse: no
+    register: find_matches
+
+  - name: print paths
+    ansible.builtin.debug:
+      var: find_matches.files[0].path
+    when: find_matches is defined
+
+  - name: create chrome dir
+    ansible.builtin.file:
+      path: "{{ item.path }}/chrome"
+      state: directory
+      mode: '0755'
+    with_items: "{{ find_matches.files }}"
+
+  - name: link css config
+    ansible.builtin.file:
+      src: "{{ role_path }}/files/userChrome.css"
+      dest: "{{ item.path }}/chrome/userChrome.css"
+      state: link
+      force: true
+    with_items: "{{ find_matches.files }}"

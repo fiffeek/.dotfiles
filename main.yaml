@@ -82,3 +82,7 @@
     - role: pihole
       tags:
         - extra
+    - role: firefox
+      tags:
+        - extra
+        - ff

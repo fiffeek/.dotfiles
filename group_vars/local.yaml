@@ -286,3 +286,6 @@ pihole:
   interface: "wlp1s0"
   ip: "172.3.27.10"
   persistence_dest: "/etc/pihole/"
+
+firefox:
+  profiles_search_path: /home/fmikina/snap/firefox/common/.mozilla/firefox/
