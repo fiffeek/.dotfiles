@@ -289,6 +289,8 @@ assign [class="Spotify"] $ws10
 assign [class="steam"] $ws5
 assign [class="Blueman-manager"] $ws6
 assign [class="Arandr"] $ws6
+assign [class="Google-chrome"] $ws7
+
 for_window [class="firefox|Slack|kitty|obsidian|Spotify|steam|Blueman-manager|Arandr"] focus
 
 # Start up env
