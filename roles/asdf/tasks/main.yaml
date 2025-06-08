@@ -5,7 +5,7 @@
     dest: "{{ dotfiles.home }}/.asdf"
     update: false
     force: true
-    version: v0.11.3
+    version: v0.18.0
 
 - name: asdf | Install plugins
   ansible.builtin.shell: "{{ asdf.extra_env }} asdf plugin-add {{ item.name }} {{ item.repository }}"
