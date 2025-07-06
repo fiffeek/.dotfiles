@@ -251,3 +251,5 @@ unsetopt BEEP
 
 alias power_mode_normal="powerprofilesctl set balanced && sudo cpupower frequency-set -g powersave"
 alias power_mode_boost="powerprofilesctl set performance && sudo cpupower frequency-set -g performance"
+
+alias dhcp_lest="sudo dhcpcd -T $(ip route get 1.1.1.1 | cut -f5 -d' ' | head -n1)"
