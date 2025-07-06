@@ -248,3 +248,6 @@ fi
 
 
 unsetopt BEEP
+
+alias power_mode_normal="powerprofilesctl set balanced && sudo cpupower frequency-set -g powersave"
+alias power_mode_boost="powerprofilesctl set performance && sudo cpupower frequency-set -g performance"
