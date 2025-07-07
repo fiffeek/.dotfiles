@@ -5,12 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/bin:$PATH"
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
-
 # Add custom binaries to the path
 export PATH=$HOME/.bin:$HOME/.bin/bin:$PATH
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 export LD_LIBRARY_PATH=$HOME/.bin/lib:$LD_LIBRARY_PATH
 export PATH=$HOME/.spicetify:$PATH
 

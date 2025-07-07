@@ -1,14 +1,12 @@
 ---
-- name: asdf | Installs asdf
-  git:
-    repo: "https://github.com/asdf-vm/asdf.git"
-    dest: "{{ dotfiles.home }}/.asdf"
-    update: false
-    force: true
-    version: v0.18.0
+- name: asdf | Make directory
+  ansible.builtin.file:
+    path: "{{ dotfiles.home }}/.asdf"
+    state: directory
+    mode: '0755'
 
 - name: asdf | Install plugins
-  ansible.builtin.shell: "{{ asdf.extra_env }} asdf plugin-add {{ item.name }} {{ item.repository }}"
+  ansible.builtin.shell: "{{ asdf.extra_env }} asdf plugin add {{ item.name }} {{ item.repository }}"
   args:
     creates: ".asdf/plugins/{{ item.name }}"
     chdir: "{{ ansible_user_dir }}"
@@ -23,7 +21,7 @@
   loop: "{{ asdf.installs }}"
 
 - name: asdf | Set up globals
-  ansible.builtin.shell: "asdf global {{ item.name }} {{ item.version }}"
+  ansible.builtin.shell: "asdf set --home {{ item.name }} {{ item.version }}"
   args:
     chdir: "{{ ansible_user_dir }}"
     executable: /bin/zsh
