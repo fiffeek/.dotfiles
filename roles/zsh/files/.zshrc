@@ -255,3 +255,7 @@ alias dhcp_lest="sudo dhcpcd -T $(ip route get 1.1.1.1 | cut -f5 -d' ' | head -n
 
 alias p="pre-commit"
 alias v="souce venv/bin/activate"
+
+# vpn
+alias mdd="mullvad disconnect"
+alias mdc="mullvad connect"
