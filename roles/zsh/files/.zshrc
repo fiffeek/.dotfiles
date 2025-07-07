@@ -252,3 +252,6 @@ alias power_mode_normal="powerprofilesctl set balanced && sudo cpupower frequenc
 alias power_mode_boost="powerprofilesctl set performance && sudo cpupower frequency-set -g performance"
 
 alias dhcp_lest="sudo dhcpcd -T $(ip route get 1.1.1.1 | cut -f5 -d' ' | head -n1)"
+
+alias p="pre-commit"
+alias v="souce venv/bin/activate"
