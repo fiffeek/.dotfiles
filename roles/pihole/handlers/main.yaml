@@ -1,6 +1,0 @@
----
-- name: restart service systemd-resolved
-  become: true
-  ansible.builtin.service:
-    name: systemd-resolved
-    state: restarted
