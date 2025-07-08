@@ -259,3 +259,5 @@ alias v="souce venv/bin/activate"
 # vpn
 alias mdd="mullvad disconnect"
 alias mdc="mullvad connect"
+
+alias keepify="find . -type d -exec touch {}/.gitkeep \\;"
