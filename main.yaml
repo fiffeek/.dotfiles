@@ -76,9 +76,6 @@
     - role: ssh
       tags:
         - ssh
-    - role: spicetify
-      tags:
-        - spicetify
     - role: firefox
       tags:
         - extra
