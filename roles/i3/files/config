@@ -46,7 +46,6 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 # notepad
 exec_always --no-startup-id ~/.bin/obsidian --no-sandbox &
 
-exec_always --no-startup-id spotify &
 
 # Notifications deamon
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
