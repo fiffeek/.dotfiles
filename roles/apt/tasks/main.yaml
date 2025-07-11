@@ -102,3 +102,35 @@
     name: "mullvad-vpn"
     state: "present"
     update_cache: yes
+
+- name: firefox | Add apt key
+  become: true
+  apt_key:
+    url: "https://packages.mozilla.org/apt/repo-signing-key.gpg"
+    state: present
+
+- name: firefox | Add repository
+  become: true
+  apt_repository:
+    repo: deb https://packages.mozilla.org/apt mozilla main
+    state: present
+
+- name: firefox | Set APT priority for Mozilla packages
+  become: true
+  copy:
+    dest: /etc/apt/preferences.d/mozilla
+    content: |
+      Package: *
+      Pin: origin packages.mozilla.org
+      Pin-Priority: 1000
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: firefox | Install
+  become: true
+  ansible.builtin.apt:
+    name: "firefox"
+    state: "present"
+    update_cache: yes
+
