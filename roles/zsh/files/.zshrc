@@ -100,7 +100,6 @@ zstyle ':fzf-tab:complete:_zlua:*' query-string input
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  asdf
   tmux
   zsh-syntax-highlighting
   sudo

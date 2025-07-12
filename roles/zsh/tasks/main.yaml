@@ -35,7 +35,7 @@
     repo: "https://github.com/romkatv/powerlevel10k.git"
     dest: "{{ (dotfiles.home, '.oh-my-zsh', dotfiles.oh_my_zsh.themes_dest, 'powerlevel10k') | path_join }}"
     version: "master"
-    update: false
+    update: true
 
 - name: zsh | Link config
   ansible.builtin.file:
