@@ -1,0 +1,22 @@
+---
+- name: Copy set-power-profile.sh script
+  become: true
+  ansible.builtin.copy:
+    src: ./files/set-power-profile.sh
+    dest: /bin/set-power-profile
+    owner: root
+    group: root
+    mode: '0755'
+
+
+- name: Add udev rules for power targets
+  become: true
+  ansible.builtin.copy:
+    dest: /etc/udev/rules.d/99-powersave.rules
+    content: |
+      SUBSYSTEM=="power_supply", ATTR{online}=="0", ATTR{type}=="Mains", ACTION=="change", RUN+="/usr/bin/systemd-run --machine={{ ansible_user_id }}@.host --user /bin/set-power-profile powersaver"
+      SUBSYSTEM=="power_supply", ATTR{online}=="1", ATTR{type}=="Mains", ACTION=="change", RUN+="/usr/bin/systemd-run --machine={{ ansible_user_id }}@.host --user /bin/set-power-profile performance"
+    mode: '0644'
+    owner: root
+    group: root
+  notify: reload udev rules

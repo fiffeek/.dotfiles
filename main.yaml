@@ -80,3 +80,6 @@
       tags:
         - extra
         - ff
+    - role: power
+      tags:
+        - power
