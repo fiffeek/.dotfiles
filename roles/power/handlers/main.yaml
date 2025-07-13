@@ -4,3 +4,13 @@
   become: true
   changed_when: true
   listen: reload udev rules
+
+- name: Reload systemctl
+  command: systemctl daemon-reload
+  become: true
+  listen: reload systemctl
+
+- name: Run on-boot
+  command: systemctl start on-boot.service
+  become: true
+  listen: run on-boot oneshot

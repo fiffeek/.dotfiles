@@ -1,0 +1,10 @@
+[Unit]
+Description=Run on-boot checks
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/on-boot
+
+[Install]
+WantedBy=multi-user.target

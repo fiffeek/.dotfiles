@@ -1,4 +1,13 @@
 ---
+- name: Copy on-boot.sh script
+  become: true
+  ansible.builtin.copy:
+    src: ./files/on-boot.sh
+    dest: /bin/on-boot
+    owner: root
+    group: root
+    mode: '0755'
+
 - name: Copy set-power-profile.sh script
   become: true
   ansible.builtin.copy:
@@ -20,3 +29,20 @@
     owner: root
     group: root
   notify: reload udev rules
+
+- name: Create on-boot systemd oneshot
+  become: true
+  template:
+    src: on-boot.service.j2
+    dest: /etc/systemd/system/on-boot.service
+    mode: 644
+  notify:
+    - reload systemctl
+
+- name: Enable power-check systemd service
+  become: true
+  systemd:
+    name: on-boot.service
+    enabled: yes
+  notify:
+    - run on-boot oneshot
