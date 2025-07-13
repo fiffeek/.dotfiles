@@ -2,6 +2,6 @@
   lineinfile:
     path: "/etc/default/grub"
     regexp: "GRUB_CMDLINE_LINUX_DEFAULT=.*"
-    line: 'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"'
+    line: 'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pcie_aspm=force"'
   notify: update grub
   become: true
