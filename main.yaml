@@ -83,3 +83,6 @@
     - role: power
       tags:
         - power
+    - role: grub
+      tags:
+        - grub

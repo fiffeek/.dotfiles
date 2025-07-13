@@ -1,0 +1,7 @@
+- name: Update grub linux cmdline
+  lineinfile:
+    path: "/etc/default/grub"
+    regexp: "GRUB_CMDLINE_LINUX_DEFAULT=.*"
+    line: 'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"'
+  notify: update grub
+  become: true
