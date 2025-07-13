@@ -1,0 +1,15 @@
+---
+- name: Stop service
+  become: true
+  ansible.builtin.systemd_service:
+    name: "{{ item }}"
+    state: stopped
+  loop: "{{ systemd.disabled_services }}"
+
+
+- name: Disable service
+  become: true
+  ansible.builtin.systemd_service:
+    name: "{{ item }}"
+    enabled: false
+  loop: "{{ systemd.disabled_services }}"

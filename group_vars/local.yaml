@@ -294,3 +294,29 @@ pihole:
 
 firefox:
   profiles_search_path: /home/fmikina/snap/firefox/common/.mozilla/firefox/
+
+systemd:
+  disabled_services:
+    # local network discovery
+    - avahi-daemon
+    # cellular
+    - ModemManager
+    # printer
+    - cups
+    - cups-browsed
+    # rotation sensors
+    - iio-sensor-proxy
+    # snap
+    - snapd.socket
+    - snapd.apparmor
+    - snapd.seeded
+    - snapd
+    # gnome
+    - gnome-remote-desktop
+    # vpn, using mullvad and wireguard
+    - openvpn
+    # crashes info
+    - kerneloops
+    - apport
+    # misc
+    - colord

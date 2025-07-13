@@ -86,3 +86,6 @@
     - role: grub
       tags:
         - grub
+    - role: cleanup
+      tags:
+        - cleanup
