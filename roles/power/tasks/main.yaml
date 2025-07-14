@@ -8,7 +8,7 @@
   copy:
     dest: "/etc/sudoers.d/{{ ansible_user_id }}-nopasswd"
     content: |
-      fmikina ALL=(ALL) NOPASSWD: /usr/bin/cpupower, /usr/bin/powerprofilesctl, /usr/bin/tee /sys/class/drm/card1/device/power_dpm_force_performance_level
+      fmikina ALL=(ALL) NOPASSWD: /usr/bin/cpupower, /usr/bin/powerprofilesctl, /usr/bin/tee /sys/class/drm/card1/device/power_dpm_force_performance_level, /usr/bin/systemctl, /usr/bin/sed /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
     owner: root
     group: root
     mode: '0440'
