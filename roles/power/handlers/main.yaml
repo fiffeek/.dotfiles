@@ -10,6 +10,10 @@
   become: true
   listen: reload systemctl
 
+- name: Reload user systemctl
+  command: systemctl --user daemon-reload
+  listen: reload user systemctl
+
 - name: Run on-boot
   command: systemctl start on-boot.service
   become: true

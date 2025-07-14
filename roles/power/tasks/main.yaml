@@ -116,3 +116,5 @@
     name: ensure-xrandr.service
     enabled: yes
     scope: user
+  notify:
+    - reload user systemctl
