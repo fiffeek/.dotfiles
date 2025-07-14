@@ -88,7 +88,7 @@ label-urgent-foreground = ${colors.foreground}
 
 [module/memory]
 type = internal/memory
-interval = 5
+interval = 10
 warn-percentage = 95
 label = %gb_free%
 format-prefix = " "
@@ -110,7 +110,7 @@ mount-0 = /
 
 ; Seconds to sleep between updates
 ; Default: 30
-interval = 60
+interval = 120
 
 ; Display fixed precision values
 ; Default: false
@@ -136,7 +136,7 @@ type = internal/cpu
 
 ; Seconds to sleep between updates
 ; Default: 1
-interval = 5
+interval = 10
 
 ; Default: 80
 ; New in version 3.6.0
@@ -151,7 +151,7 @@ format-prefix-font = 1
 
 [module/date]
 type = internal/date
-interval = 1.0
+interval = 60.0
 date = %m/%d%
 label = %date%
 
@@ -162,7 +162,7 @@ format-prefix-font = 1
 
 [module/time]
 type = internal/date
-interval = 1.0
+interval = 15.0
 time = %H:%M
 label = %time%
 
@@ -204,7 +204,7 @@ label-discharging = %percentage%% (%time%, %consumption%W)
 [module/pulseaudio]
 type = internal/pulseaudio
 use-ui-max = true
-interval = 5
+interval = 10
 format-volume = <ramp-volume> <label-volume>
 ramp-volume-0 = 󰕿
 ramp-volume-1 = 󰖀
@@ -216,7 +216,7 @@ label-muted-font = 1
 [module/bluetooth]
 type = custom/script
 exec = ~/.config/polybar/scripts/bluetooth.sh
-interval = 10
+interval = 30
 click-left = exec blueman-manager
 click-right = exec ~/.config/polybar/scripts/bluetooth.sh --toggle &
 format-background = ${colors.background}
