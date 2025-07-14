@@ -4,6 +4,7 @@
   ansible.builtin.systemd_service:
     name: "{{ item }}"
     state: stopped
+  ignore_errors: true
   loop: "{{ systemd.disabled_services }}"
 
 
@@ -12,4 +13,21 @@
   ansible.builtin.systemd_service:
     name: "{{ item }}"
     enabled: false
+  ignore_errors: true
   loop: "{{ systemd.disabled_services }}"
+
+- name: Stop user service
+  ansible.builtin.systemd_service:
+    name: "{{ item }}"
+    state: stopped
+    scope: user
+  ignore_errors: true
+  loop: "{{ systemd.user.disabled_services }}"
+
+- name: Disable user service
+  ansible.builtin.systemd_service:
+    name: "{{ item }}"
+    scope: user
+    enabled: false
+  ignore_errors: true
+  loop: "{{ systemd.user.disabled_services }}"

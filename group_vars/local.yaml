@@ -320,3 +320,13 @@ systemd:
     - apport
     # misc
     - colord
+  user:
+    disabled_services:
+      # snap
+      - snap.snapd-desktop-integration.snapd-desktop-integration.service
+      # gnome evolution
+      - evolution-addressbook-factory.service
+      - evolution-calendar-factory.service
+      - evolution-source-registry.service
+      # screen readers
+      - speech-dispatcher.socket
