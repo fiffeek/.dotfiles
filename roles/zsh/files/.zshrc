@@ -260,3 +260,7 @@ alias mdd="mullvad disconnect"
 alias mdc="mullvad connect"
 
 alias keepify="find . -type d -exec touch {}/.gitkeep \\;"
+
+# ansible-vault
+av_encrypt() { fd . --extension .vault | xargs -n1 echo ansible-vault encrypt --vault-id "$1" | bash };
+av_decrypt() { fd . --extension .vault | xargs -n1 echo ansible-vault decrypt --vault-id "$1" | bash };
