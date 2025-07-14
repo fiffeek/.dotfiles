@@ -22,10 +22,10 @@ output DisplayPort-10
 off
 output eDP
 crtc 0
-mode 2880x1920
+mode 2880x1920_60.00
 pos 0x0
 primary
-rate 120.00
+rate 59.96
 x-prop-colorspace Default
 x-prop-max_bpc 16
 x-prop-non_desktop 0
