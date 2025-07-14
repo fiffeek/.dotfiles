@@ -1,7 +1,6 @@
 [Unit]
 Description=Ensure custom xrandr modes exist
 After=default.target
-StartLimitIntervalSec=20
 StartLimitBurst=3
 
 [Service]
@@ -10,7 +9,7 @@ Environment=DISPLAY=:0
 Environment=XAUTHORITY=/run/user/{{ ansible_user_uid.stdout }}/gdm/Xauthority
 Type=oneshot
 Restart=on-failure
-RestartSec=2
+RestartSec=3
 
 [Install]
 WantedBy=default.target
