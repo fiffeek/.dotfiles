@@ -1,9 +1,64 @@
 ---
+- name: Execute id command
+  command: id -u {{ ansible_user_id }}
+  register: ansible_user_uid
+
+- name: Allow passwordless sudo for performance-related commands
+  become: true
+  copy:
+    dest: "/etc/sudoers.d/{{ ansible_user_id }}-nopasswd"
+    content: |
+      fmikina ALL=(ALL) NOPASSWD: /usr/bin/cpupower, /usr/bin/powerprofilesctl, /usr/bin/tee /sys/class/drm/card1/device/power_dpm_force_performance_level
+    owner: root
+    group: root
+    mode: '0440'
+    validate: '/usr/sbin/visudo -cf %s'
+
+- name: Copy adjust-refresh-rate.sh script
+  become: true
+  ansible.builtin.copy:
+    src: ./files/adjust-refresh-rate.sh
+    dest: /bin/adjust-refresh-rate
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Add adjust refresh rate wrapper
+  become: true
+  template:
+    src: adjust-refresh-rate-wrapper.sh.j2
+    dest: /bin/adjust-refresh-rate-wrapper
+    mode: '0755'
+
+- name: Create adjust refresh rate service
+  become: true
+  template:
+    src: adjust-refresh-rate.service.j2
+    dest: /home/{{ ansible_user_id }}/.config/systemd/user/adjust-refresh-rate.service
+    mode: 644
+  notify:
+    - reload systemctl
+
+- name: Enable adjust refresh rate
+  systemd:
+    name: adjust-refresh-rate.service
+    enabled: yes
+    scope: user
+
 - name: Copy on-boot.sh script
   become: true
   ansible.builtin.copy:
     src: ./files/on-boot.sh
     dest: /bin/on-boot
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Copy ensure-edp-modes-exist.sh script
+  become: true
+  ansible.builtin.copy:
+    src: ./files/ensure-edp-modes-exist.sh
+    dest: /bin/ensure-edp-modes-exist
     owner: root
     group: root
     mode: '0755'
@@ -46,3 +101,18 @@
     enabled: yes
   notify:
     - run on-boot oneshot
+
+- name: Create xrandr modes service
+  become: true
+  template:
+    src: ensure-xrandr-modes-exist.service.j2
+    dest: /home/{{ ansible_user_id }}/.config/systemd/user/ensure-xrandr.service
+    mode: 644
+  notify:
+    - reload systemctl
+
+- name: Enable xrandr modes service
+  systemd:
+    name: ensure-xrandr.service
+    enabled: yes
+    scope: user

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -ex
+
+sudo -u {{ ansible_user_id }} XDG_RUNTIME_DIR=/run/user/{{ ansible_user_uid.stdout }} /usr/bin/systemctl --user start adjust-refresh-rate.service
