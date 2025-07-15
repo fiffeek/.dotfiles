@@ -4,6 +4,8 @@ set -ex
 
 gpu_level() { echo "$1" | sudo tee /sys/class/drm/card1/device/power_dpm_force_performance_level; }
 
+aspm_level() { echo "$1" | sudo tee /sys/module/pcie_aspm/parameters/policy; }
+
 wifi_level() {
   NM_CONFIG="/etc/NetworkManager/conf.d/default-wifi-powersave-on.conf"
   if [ "$1" = "powersave" ]; then
@@ -22,6 +24,7 @@ performance() {
   gpu_level "auto"
   adjust-refresh-rate || true
   wifi_level "performance"
+  aspm_level "default"
   notify-send 'Performance mode' || true
 }
 
@@ -32,6 +35,7 @@ powersaver() {
   gpu_level "low"
   adjust-refresh-rate || true
   wifi_level "powersave"
+  aspm_level "powersupersave"
   notify-send 'Powersaver mode' || true
 }
 
