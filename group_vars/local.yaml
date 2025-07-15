@@ -1,7 +1,6 @@
 ---
 apt_packages:
   - ansible
-  - ansible-lint
   - cmake
   - htop
   - polybar
