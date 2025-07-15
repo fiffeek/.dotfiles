@@ -36,7 +36,7 @@ font-1 = "Symbols Nerd Font Mono:style=Regular:size=9;2"
 
 modules-left = i3
 modules-center = 
-modules-right = pulseaudio battery cpu memory disk date time bluetooth vpn-mullvad-status vpn-wireguard temperature
+modules-right = pulseaudio battery cpu memory disk date time bluetooth vpn-mullvad-status vpn-wireguard power-status temperature
 
 
 cursor-click = pointer
@@ -232,6 +232,11 @@ interval = 30
 [module/vpn-wireguard]
 type = custom/script
 exec = ~/.config/polybar/scripts/wireguard.sh --status
+interval = 30
+
+[module/power-status]
+type = custom/script
+exec = ~/.config/polybar/scripts/power.sh --status
 interval = 30
 
 [module/temperature]
