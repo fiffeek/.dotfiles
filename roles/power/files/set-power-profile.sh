@@ -17,6 +17,15 @@ wifi_level() {
   sudo systemctl restart NetworkManager
 }
 
+set_flag() {
+  FLAG_LOCATION="$HOME/flags/power"
+  FLAG_FILENAME="$1"
+  mkdir -p "$FLAG_LOCATION"
+  for file in "$FLAG_LOCATION"/*; do echo 0 >"$file"; done
+  touch "$FLAG_LOCATION/$FLAG_FILENAME"
+  echo 1 >"$FLAG_LOCATION/$FLAG_FILENAME"
+}
+
 performance() {
   sudo powerprofilesctl set performance
   sudo cpupower frequency-set -g performance
@@ -25,6 +34,7 @@ performance() {
   adjust-refresh-rate || true
   wifi_level "performance"
   aspm_level "default"
+  set_flag "performance" || true
   notify-send 'Performance mode' || true
 }
 
@@ -36,6 +46,7 @@ powersaver() {
   adjust-refresh-rate || true
   wifi_level "powersave"
   aspm_level "powersupersave"
+  set_flag "powersave" || true
   notify-send 'Powersaver mode' || true
 }
 
