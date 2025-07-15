@@ -2,6 +2,7 @@
 Description=Ensure custom xrandr modes exist
 After=default.target
 StartLimitBurst=3
+StartLimitIntervalSec=60
 
 [Service]
 ExecStart=/usr/bin/ensure-edp-modes-exist
