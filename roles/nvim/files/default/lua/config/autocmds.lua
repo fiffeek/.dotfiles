@@ -8,3 +8,10 @@ vim.cmd([[
   au BufRead,BufNewFile */roles/*.yaml set filetype=yaml.ansible
   au BufRead,BufNewFile */playbooks/*.yaml set filetype=yaml.ansible
 ]])
+
+vim.cmd([[
+  augroup VaultFiletypeDetection
+    autocmd!
+    autocmd BufReadPost *.yaml.vault,*.yml.vault if !search('ANSIBLE_VAULT', 'nw') | set filetype=yaml | endif
+  augroup END
+]])
