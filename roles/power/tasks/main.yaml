@@ -13,6 +13,7 @@
       fmikina ALL=(ALL) NOPASSWD: /usr/bin/sed -i s/2/3/ /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
       fmikina ALL=(ALL) NOPASSWD: /usr/bin/sed -i s/3/2/ /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
       fmikina ALL=(ALL) NOPASSWD: /usr/bin/tee /sys/module/pcie_aspm/parameters/policy
+      fmikina ALL=(ALL) NOPASSWD: /usr/sbin/powertop
     owner: root
     group: root
     mode: '0440'
