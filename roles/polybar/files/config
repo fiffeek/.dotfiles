@@ -173,7 +173,7 @@ format-prefix-font = 1
 
 [module/battery]
 type = internal/battery
-full-at = 95
+full-at = 90
 low-at = 15
 battery = BAT1
 adapter = ADP1
