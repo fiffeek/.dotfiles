@@ -5,6 +5,8 @@ After=multi-user.target
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/on-boot
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/run/user/{{ ansible_user_uid.stdout }}/gdm/Xauthority
 
 [Install]
 WantedBy=multi-user.target
