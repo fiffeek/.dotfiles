@@ -294,7 +294,7 @@ pihole:
   persistence_dest: "/etc/pihole/"
 
 firefox:
-  profiles_search_path: /home/fmikina/snap/firefox/common/.mozilla/firefox/
+  profiles_search_path: /home/{{ ansible_user_id }}/.mozilla/firefox/
 
 systemd:
   disabled_services:

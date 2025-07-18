@@ -3,7 +3,7 @@
     ansible.builtin.find:
       paths: "{{ firefox.profiles_search_path }}/"
       file_type: directory
-      patterns: "*default*"
+      patterns: "*uya30cst.default*"
       recurse: no
     register: find_matches
 

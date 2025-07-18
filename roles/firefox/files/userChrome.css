@@ -80,3 +80,7 @@ Window controls will be all wrong without it
   pointer-events: none;
   margin-left: var(--uc-window-drag-space-pre, 0px)
 }
+
+#sidebar-header {
+  display: none;
+}
