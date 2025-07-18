@@ -1,6 +1,5 @@
 configuration {
-	/*---------- General setting ----------*/
-	modi: "drun,run,filebrowser,window";
+	modi: "drun,run,filebrowser,window,ssh";
 	case-sensitive: false;
 	cycle: true;
 	filter: "";

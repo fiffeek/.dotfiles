@@ -84,8 +84,7 @@ bindsym $mod+Return exec ~/.bin/kitty --single-instance -e tmux
 bindsym $mod+Shift+q kill
 
 # rofi:
-bindsym $mod+space exec --no-startup-id rofi -dpi 144 -show run -theme ~/.config/rofi/standard.rasi
-bindsym $mod+Shift+p exec --no-startup-id ~/.config/rofi/powermenu.sh
+bindsym $mod+space exec --no-startup-id "rofi -dpi 144 -show combi -combi-modes search,drun,run,ssh,window,filebrowser -modi combi -theme ~/.config/rofi/theme.rasi -modi search:~/.bin/rofi-web-search.py"
 
 # change focus
 bindsym $mod+h focus left
