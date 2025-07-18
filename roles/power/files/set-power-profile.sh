@@ -50,8 +50,11 @@ powersaver() {
   notify-send 'Powersaver mode' || true
 }
 
-case "$1" in
-performance) performance ;;
-powersaver) powersaver ;;
-*) echo "Please enter an action" ;;
-esac
+(
+  flock -w 30 200 || exit 1
+  case "$1" in
+  performance) performance ;;
+  powersaver) powersaver ;;
+  *) echo "Please enter an action" ;;
+  esac
+) 200>/tmp/set-power-profile.lock
