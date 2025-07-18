@@ -10,6 +10,7 @@ return {
       "isort",
       "bzl",
       "clangd",
+      "jinja-lsp",
     },
   },
 }

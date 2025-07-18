@@ -19,3 +19,8 @@ vim.opt.foldlevel = 1
 vim.opt.showmode = false
 
 vim.g.lazyvim_picker = "fzf"
+
+-- custom filetypes for the lsp
+vim.filetype.add({
+  extension = { bats = "sh", jinja = "jinja", jinja2 = "jinja", j2 = "jinja" },
+})
