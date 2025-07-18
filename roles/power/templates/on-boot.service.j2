@@ -4,7 +4,7 @@ After=multi-user.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/on-boot
+ExecStart=/usr/bin/on-boot {{ ansible_user_id }}
 Environment=DISPLAY=:0
 Environment=XAUTHORITY=/run/user/{{ ansible_user_uid.stdout }}/gdm/Xauthority
 
