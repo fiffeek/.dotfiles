@@ -20,7 +20,7 @@
 
 - name: fonts | Download JetBrainsMono
   ansible.builtin.unarchive:
-    src: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip
+    src: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
     dest: "{{ lookup('env', 'HOME') }}/.fonts"
     remote_src: true
   when: jbm_exists is failed
