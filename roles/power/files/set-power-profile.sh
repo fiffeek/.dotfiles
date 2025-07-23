@@ -6,6 +6,8 @@ gpu_level() { echo "$1" | sudo tee /sys/class/drm/card1/device/power_dpm_force_p
 
 aspm_level() { echo "$1" | sudo tee /sys/module/pcie_aspm/parameters/policy; }
 
+display_backlight_level() { brightnessctl -d amdgpu_bl1 set "$1"; }
+
 wifi_level() {
   NM_CONFIG="/etc/NetworkManager/conf.d/default-wifi-powersave-on.conf"
   if [ "$1" = "powersave" ]; then
@@ -34,6 +36,7 @@ performance() {
   adjust-refresh-rate || true
   wifi_level "performance"
   aspm_level "default"
+  display_backlight_level "30"
   set_flag "performance" || true
   notify-send 'Performance mode' || true
 }
@@ -46,6 +49,7 @@ powersaver() {
   adjust-refresh-rate || true
   wifi_level "powersave"
   aspm_level "powersupersave"
+  display_backlight_level "15"
   set_flag "powersave" || true
   notify-send 'Powersaver mode' || true
 }
