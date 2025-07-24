@@ -37,11 +37,10 @@ if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
   exit 0
 fi
 
-if [[ " ${tmuxp_saved_sessions[*]} " =~ [[:space:]]${session_name}[[:space:]] ]]; then
-  tmuxp load -d $session_name
-fi
-
 if ! tmux has-session -t=$session_name 2>/dev/null; then
+  if [[ " ${tmuxp_saved_sessions[*]} " =~ [[:space:]]${session_name}[[:space:]] ]]; then
+    tmuxp load -d $session_name
+  fi
   tmux new-session -ds $session_name -c $dir
 fi
 
