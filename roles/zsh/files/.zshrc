@@ -265,3 +265,5 @@ alias mdc="mullvad connect"
 alias keepify="find . -type d -exec touch {}/.gitkeep \\;"
 
 alias pow="sudo powertop"
+
+bindkey -v
