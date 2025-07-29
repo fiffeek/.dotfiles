@@ -68,6 +68,10 @@ apt_packages:
   - pulseaudio-utils
   - pavucontrol
   - power-profiles-daemon
+  # kvm remote control
+  - wsmancli
+  - reminna
+  - reminna-plugin-vnc
 
 vscode:
   apt_deps:
