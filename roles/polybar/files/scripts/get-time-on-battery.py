@@ -7,8 +7,8 @@ import os
 import re
 import subprocess
 from dataclasses import dataclass
-from typing import Optional, Tuple
-from datetime import datetime
+from typing import Optional
+from datetime import datetime, timedelta
 
 UPOWER_BIN = "upower"
 HISTORICAL_STATS_LOCATION = "/var/lib/upower/"
@@ -61,6 +61,13 @@ def get_model(battery_device: str) -> str:
     return model
 
 
+def get_boot_time() -> datetime:
+    with open("/proc/uptime", "r") as f:
+        uptime_seconds = float(f.readline().split()[0])
+
+    return datetime.now() - timedelta(seconds=uptime_seconds)
+
+
 def get_stats(model: str) -> Optional[ChargingStatus]:
     regex = re.compile(HISTORICAL_STATS_LOCATION_REGEX.format(model))
     stats_file = None
@@ -98,14 +105,21 @@ def get_stats(model: str) -> Optional[ChargingStatus]:
     return last_known_charging_status
 
 
-def print_time_on_battery(
-    last_known_charging_status: Optional[ChargingStatus],
-    using_battery: bool,
+def print_time_on_battery_since_last_boot(
+    last_known_charging_status: ChargingStatus,
 ) -> None:
-    if last_known_charging_status is None or not using_battery:
-        return
-    delta = datetime.now() - last_known_charging_status.updated_at
+    boot_time = get_boot_time()
+
+    if last_known_charging_status.updated_at < boot_time:
+        # we booted and havent charged since
+        # discard the possibility of multiple reboots etc
+        # as it becomes too complicated; in my case
+        # this stat is exactly what i want anyway
+        delta = datetime.now() - boot_time
+    else:
+        delta = datetime.now() - last_known_charging_status.updated_at
     hours, minutes, _ = str(delta).split(":")
+
     print(f"󱟟 {hours}:{minutes}")
 
 
@@ -116,11 +130,17 @@ def check_if_using_battery() -> bool:
 
 
 def main():
+    using_battery = check_if_using_battery()
+    if not using_battery:
+        return
+
     battery_device = get_battery_device()
     model = get_model(battery_device)
     last_known_charging_status = get_stats(model)
-    using_battery = check_if_using_battery()
-    print_time_on_battery(last_known_charging_status, using_battery)
+    if last_known_charging_status is None:
+        return
+
+    print_time_on_battery_since_last_boot(last_known_charging_status)
 
 
 if __name__ == "__main__":
