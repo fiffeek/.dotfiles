@@ -49,7 +49,7 @@ powersaver() {
   adjust-refresh-rate || true
   wifi_level "powersave"
   aspm_level "powersupersave"
-  display_backlight_level "15"
+  display_backlight_level "6"
   set_flag "powersave" || true
   notify-send 'Powersaver mode' || true
 }
