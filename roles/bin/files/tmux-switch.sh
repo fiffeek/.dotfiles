@@ -39,7 +39,7 @@ fi
 
 if ! tmux has-session -t=$session_name 2>/dev/null; then
   if [[ " ${tmuxp_saved_sessions[*]} " =~ [[:space:]]${session_name}[[:space:]] ]]; then
-    tmuxp load -d $session_name
+    tmuxp load -d $session_name >/dev/null 2>&1
   fi
   tmux new-session -ds $session_name -c $dir
 fi
