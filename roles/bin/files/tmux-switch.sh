@@ -12,10 +12,12 @@ tmuxp_saved_sessions=$(tmuxp ls)
 if [[ $# -eq 1 ]]; then
   selected=$1
 else
-  current_sessions=$(tmux list-sessions -F "#S")
+  current_sessions=$(tmux list-sessions -F "#{session_name} #{session_last_attached}" 2>/dev/null |
+    sort -k2 -nr |
+    awk '{print $1}')
   repos=$(find "$REPOS" -mindepth 1 -maxdepth 1 -printf "%f\n")
   options=($current_sessions "${repos[@]}" "${tmuxp_saved_sessions[@]}")
-  options=($(printf "%s\n" "${options[@]}" | sort -u))
+  options=($(printf "%s\n" "${options[@]}" | awk '!seen[$0]++'))
   # https://github.com/junegunn/fzf/issues/1693
   selected=$(printf "%s\n" "${options[@]}" | fzf-tmux --bind=enter:replace-query+print-query $TMUX_FZF_OPTIONS --preview="tmux capture-pane -ep -t {}")
 fi
