@@ -123,3 +123,14 @@
     scope: user
   notify:
     - reload user systemctl
+
+- name: Ensure intel drivers have correct power save settings
+  become: true
+  ansible.builtin.lineinfile:
+    line: "{{ item }}"
+    path: "/etc/modprobe.d/iwlwifi.conf"
+  loop: "{{ lines }}"
+  vars:
+    lines:
+      - "options iwlwifi power_save=Y power_level=1 uapsd_disable=0 led_mode=3"
+      - "options iwlmvm power_scheme=3"
