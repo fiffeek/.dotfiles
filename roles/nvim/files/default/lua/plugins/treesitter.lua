@@ -34,7 +34,7 @@ return {
     end
     opts.indent = {
       enable = true,
-      disable = { "python" },
+      disable = { "python", "yaml" },
     }
   end,
 }
